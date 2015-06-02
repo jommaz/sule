@@ -17,4 +17,5 @@
 /tmp
 
 * Ignore bundled gemfile
-/Gemfile.lcok
+/Gemfile.lock
+/Gemfile
