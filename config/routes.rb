@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  # get 'videos/new'
+
+  # get 'images/new'
+
+  resources :capsules
+
+  get 'capsules/delete', to: 'capsules#delete', as: 'capsules_remove'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
