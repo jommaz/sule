@@ -11,9 +11,21 @@
  * file per style scope.
  *
  *= require_self
- *= require carousel
+ *= require slick
+ *= require slick-theme
  */
 
 @import "bourbon";
 @import "base/base";
 @import "neat";
+
+
+.preview{
+	width: 80%;
+	height: 400px;
+}
+
+.pic{
+	width: 200px;
+	height: 200px;
+}
