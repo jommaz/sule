@@ -1,5 +1,4 @@
 source 'http://rubygems.org'
-source 'http://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -41,8 +40,12 @@ gem 'mandrill-api'
 # HAML
 gem 'haml'
 
+source 'http://rails-assets.org' do
+
 # photo carousel
 gem 'rails-assets-carousel'
+
+end
 
 
 # Use ActiveModel has_secure_password

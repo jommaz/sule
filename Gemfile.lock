@@ -225,7 +225,7 @@ DEPENDENCIES
   neat
   quiet_assets
   rails (= 4.2.1)
-  rails-assets-carousel
+  rails-assets-carousel!
   refills
   rspec-rails
   sass-rails (~> 5.0)
