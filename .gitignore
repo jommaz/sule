@@ -15,7 +15,11 @@
 /log/*
 !/log/.keep
 /tmp
+<<<<<<< HEAD
 
 * Ignore bundled gemfile
 /Gemfile.lock
 /Gemfile
+=======
+/Gemfile.lock
+>>>>>>> 4572d16a604cea6253bf7a711303d0dc340eb835
