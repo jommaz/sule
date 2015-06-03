@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602161239) do
+ActiveRecord::Schema.define(version: 20150603152525) do
 
   create_table "capsules", force: :cascade do |t|
     t.datetime "release_date"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20150602161239) do
     t.integer  "capsule_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "unique"
   end
 
   add_index "posts", ["capsule_id"], name: "index_posts_on_capsule_id"
