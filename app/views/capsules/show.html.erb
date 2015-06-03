@@ -1,9 +1,17 @@
-<p>hello world</p>
-
-<% @capsule.posts.each do |t| %>
-	<p>
-		<%= t.posts %>
-	</p>
+<% if @capsule.release_date > Time.now %>
+	<h1>
+		This capsule will open in
+		<%= @year_remaining %> years
+		<%= @month_remaining %> months and
+		<%= @day_remaining %> days
+	</h1>
+<% else %>
+	<% @capsule.posts.each do |t| %>
+		<p>
+			<%= t.posts %>
+		</p>
+	<% end %>
+	<% if @capsule.image? %>
+		<%= image_tag @capsule.image_url.to_s %>
+	<% end %>
 <% end %>
-
-<%= image_tag @capsule.image_url.to_s  %>
