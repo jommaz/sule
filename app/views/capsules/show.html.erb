@@ -1,18 +1,12 @@
-<% if @capsule.release_date > Time.now %>
-	<h1>
-		This capsule will open in
-		<%= @year_remaining %> years
-		<%= @month_remaining %> months and
-		<%= @day_remaining %> days
-	</h1>
-<% else %>
-	<h1>
+
+
 		<% @capsule.posts.each do |t| %>
-		<p>
-			<%= t.posts %>
-		</p>
-	<!-- 		<%= t.images %>
-			<%= t.videos %> -->
+			<p>
+				<%= t.posts %>
+			</p>
 		<% end %>
-	</h1>
-<% end %>
+			
+			<% @capsule.images.each do |t| %>
+			<img src="#{t.images_url.to_s}">
+			<% end %>	
+
