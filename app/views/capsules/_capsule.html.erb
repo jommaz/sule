@@ -1,0 +1,15 @@
+<%= form_for @capsule, :html => {:multipart => true}, method: :post do |f| %>
+	<%= f.text_field :title, placeholder: "Capsule title" %>
+
+	<br>
+
+	<%= f.text_field :release_date, class: "datepicker", placeholder: "When do you want this to be opened?" %>
+	
+	<br>
+
+	<p>
+		<%= f.file_field :images %>
+	</p>
+
+	<%= f.submit "Create your capsule" %>
+<% end %>

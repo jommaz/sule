@@ -41,12 +41,12 @@ gem 'mandrill-api'
 # HAML
 gem 'haml'
 
-source 'http://rails-assets.org' do
 
 # photo carousel
-gem 'rails-assets-carousel'
+gem "jquery-slick-rails"
 
-end
+# AJAX implementation
+gem 'jquery-ui-rails'
 
 
 # Use ActiveModel has_secure_password
@@ -63,7 +63,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'quiet_assets'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
