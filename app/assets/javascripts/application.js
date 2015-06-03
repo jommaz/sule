@@ -15,6 +15,7 @@
 //= require jquery-ui
 //= require turbolinks
 //= require_tree .
+<<<<<<< HEAD
 //= require carousel
 $(document).ready(function(){
 	$( ".datepicker" ).datepicker({
@@ -25,3 +26,6 @@ $(document).ready(function(){
 	// });
 		// minDate: 0
 })
+=======
+//= require jquery.slick
+>>>>>>> 0b342649df6b95a38eacfd1398a6cda7c856ab06
