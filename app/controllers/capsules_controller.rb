@@ -6,6 +6,7 @@ class CapsulesController < ApplicationController
 
 	def show
 		@capsule = Capsule.find(params[:id])
+		# @image = ImageUploader.new
 		release = @capsule.release_date.to_datetime
 		reday = release.day
 		remonth = release.month
@@ -17,6 +18,11 @@ class CapsulesController < ApplicationController
 		@year_remaining =  reyear - year 
 		@month_remaining = remonth - month 
 		@day_remaining = reday - day
+	end
+
+	def edit
+		@capsule = Capsule.find(params[:id])
+		# @image = ImageUploader.new
 	end
 
 	def delete
@@ -35,6 +41,11 @@ class CapsulesController < ApplicationController
 
 	def update
 		@capsule = Capsule.find(params[:id])
+		if @capsule.update(params.require(:capsule).permit(:post, :video, :image))
+			redirect_to capsules_path, notice: "Your capsule has been updated"
+		else
+			render :edit
+		end
 	end
 
 	def destroy

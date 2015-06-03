@@ -27,7 +27,8 @@ gem 'devise'
 
 # media upload gem
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
-
+# # rmagick for carrierwave
+# gem 'rmagick'
 # front-end framework gems
 gem 'bourbon'
 gem 'neat'
@@ -47,6 +48,8 @@ gem "jquery-slick-rails"
 
 # AJAX implementation
 gem 'jquery-ui-rails'
+
+
 
 
 # Use ActiveModel has_secure_password
