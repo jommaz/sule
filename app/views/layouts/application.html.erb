@@ -10,6 +10,11 @@
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.css"/>
 </head>
 <body>
+	<%= link_to 'capsules', capsules_path %> | <br>
+	<%= link_to 'posts', new_capsule_post_path(@capsule) %> | <br>
+	<%= link_to 'sign-up', new_user_registration_path %> | <br>
+	<%= link_to 'logout', destroy_user_session_path, method: :delete %> | <br>
+	<%= link_to 'login', new_user_session_path %>
 	
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>

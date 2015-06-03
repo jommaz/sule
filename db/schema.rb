@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150603152525) do
+ActiveRecord::Schema.define(version: 20150603185139) do
 
   create_table "capsules", force: :cascade do |t|
     t.datetime "release_date"

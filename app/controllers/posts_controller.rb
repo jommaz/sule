@@ -5,11 +5,20 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(params.require(:post).permit(:title, :body, :capsule_id, :unique)
+		@capsule = Capsule.find(params[:capsule_id])
+  	@post = Post.new(params.require(:comment).permit(:body, :title, :unique).merge(capsule_id: params[:capsule_id]))
 		if @post.save
-			redirect_to current_user.capsules
+			redirect_to @capsule
+			flash[:notice] = 'Post saved'
 		else
-			redirect_to current_user.capsules
+			redirect_to @capsule
+			flash[:login] = 'There was a problem with your post'
 		end 
 	end
+
+	private
+
+  def post_params
+    (params.require(:post).permit(:title, :body, :unique).merge(capsule_id: params[:capsule_id]))
+  end
 end

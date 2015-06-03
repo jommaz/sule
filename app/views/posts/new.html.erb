@@ -1,7 +1,10 @@
+
+
+
 <h2>Your Child grows up too quickly. Their personality develops in ways you could not imagine.</h2>
 
 
-<%= form_for @post do |t| %>
+<%= form_for ([@capsule, @post]) do |f| %>
 <% if @post.errors.any? %>
   <% @post.errors.full_messages.each do |msg| %>
     <p><%= msg %> </p>
@@ -11,9 +14,12 @@
 <form class="{$modifiers}">
     <fieldset>
     <div class="wy-control-group">
-    	<%= f.label :body %>
-    	<%= f.text_field :body %>
-      <div class="wy-control">
+    	<%= f.label :body, 'How much did your child weigh at birth?' %>
+      <%= f.text_field :body %>
+      <%= f.hidden_field :unique, value: 1 %>
+      <%= f.submit 'Submit' %>
+    </fieldset>
+   <!--    <div class="wy-control">
         <input type="text" placeholder="in Pounds"/>
       </div>
       <span class="wy-form-message"> e.g. 6.6 lbs</span>
@@ -51,5 +57,5 @@
     </div>
     <input type="submit" class="btn" />
   </fieldset>
-</form>
+</form> -->
 <% end %>

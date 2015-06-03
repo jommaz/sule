@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   # get 'images/new'
 
-  resources :capsules
+  resources :capsules do
+     resources :posts
+   end
 
   get 'capsules/delete', to: 'capsules#delete', as: 'capsules_remove'
 
@@ -14,7 +16,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  get 'posts/new'
+ 
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
