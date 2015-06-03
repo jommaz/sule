@@ -12,6 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require_tree .
 //= require carousel
+$(document).ready(function(){
+	$( ".datepicker" ).datepicker({
+		dateFormat: 'dd-mm-yy'
+	});
+	// $( ".datepicker" ).datepicker({
+	// 	defaultDate: +2y
+	// });
+		// minDate: 0
+})
