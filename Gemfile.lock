@@ -48,6 +48,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.0)
+    base (0.0.2)
     bcrypt (3.1.10)
     bcrypt (3.1.10-x86-mingw32)
     binding_of_caller (0.7.2)
@@ -214,6 +215,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  base
   bitters
   bourbon
   byebug

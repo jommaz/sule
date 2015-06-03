@@ -33,6 +33,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'refills'
+gem 'base'
 
 # user email gem
 gem 'mandrill-api'
