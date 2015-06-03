@@ -6,8 +6,8 @@ class CapsulesController < ApplicationController
 
 	def show
 		@capsule = Capsule.find(params[:id])
-		p release = @capsule.release_date.to_datetime
-		p reday = release.day
+		release = @capsule.release_date.to_datetime
+		reday = release.day
 		remonth = release.month
 		reyear = release.year
 		date = Time.now
@@ -17,8 +17,6 @@ class CapsulesController < ApplicationController
 		@year_remaining =  reyear - year 
 		@month_remaining = remonth - month 
 		@day_remaining = reday - day
-		# @image = ImagesUploader.retrieve
-		# @video = VideosUploader.retrieve
 	end
 
 	def delete

@@ -3,53 +3,53 @@
 
 <%= form_for @post do |t| %>
 <% if @post.errors.any? %>
-  <% @post.errors.full_messages.each do |msg| %>
-    <p><%= msg %> </p>
-    <% end %>
+ <% @post.errors.full_messages.each do |msg| %>
+   <p><%= msg %> </p>
+   <% end %>
 <% end %>
 
 <form class="{$modifiers}">
+   <fieldset>
+   <div class="wy-control-group">
+       <%= f.label :body %>
+       <%= f.text_field :body %>
+     <div class="wy-control">
+       <input type="text" placeholder="in Pounds"/>
+     </div>
+     <span class="wy-form-message"> e.g. 6.6 lbs</span>
+   </div>
+   <input type="submit" class="btn" />
+     </div>
+    </fieldset>
     <fieldset>
+   <div class="wy-control-group">
+     <label> Describe how your child looks</label>
+     <div class="wy-control">
+       <input type="text" placeholder="who does they look like more?"/>
+     </div>
+     <span class="wy-form-message">e.g. He has his mother's smile, his father's eyes. A birthmark on his hand.</span>
+       </div>
+       <input type="submit" class="btn" />
+ </fieldset>
+  <fieldset>
     <div class="wy-control-group">
-    	<%= f.label :body %>
-    	<%= f.text_field :body %>
-      <div class="wy-control">
-        <input type="text" placeholder="in Pounds"/>
-      </div>
-      <span class="wy-form-message"> e.g. 6.6 lbs</span>
-    </div>
-    <input type="submit" class="btn" />
-  	</div>
-	</fieldset>
-	<fieldset>
-    <div class="wy-control-group">
-      <label> Describe how your child looks</label>
-      <div class="wy-control">
-        <input type="text" placeholder="who does they look like more?"/>
-      </div>
-      <span class="wy-form-message">e.g. He has his mother's smile, his father's eyes. A birthmark on his hand.</span>
-    	</div>
-    	<input type="submit" class="btn" />
+     <label> What do you want most for your child?</label>
+     <div class="wy-control">
+       <input type="text" placeholder="your main hopes and dreams for them"/>
+     </div>
+         <span class="wy-form-message"> e.g. to be happy and successful.</span>
+          </div>
+              <input type="submit" class="btn" />
   </fieldset>
-   <fieldset>
-     <div class="wy-control-group">
-      <label> What do you want most for your child?</label>
-      <div class="wy-control">
-        <input type="text" placeholder="your main hopes and dreams for them"/>
-      </div>
-      	<span class="wy-form-message"> e.g. to be happy and successful.</span>
-   		</div>
-   		    <input type="submit" class="btn" />
-   </fieldset>
-   <fieldset>
-    <div class="wy-control-group">
-      <label>What is something you'd want to tell your child when they are older?</label>
-      <div class="wy-control">
-        <input type="text" placeholder="the feelings that you may feel now"/>
-      </div>
-      <span class="wy-form-message"> e.g. I was so overwhelmed to see you, but I knew the love I have for you was unconditional.</span>
-    </div>
-    <input type="submit" class="btn" />
-  </fieldset>
+  <fieldset>
+   <div class="wy-control-group">
+     <label>What is something you'd want to tell your child when they are older?</label>
+     <div class="wy-control">
+       <input type="text" placeholder="the feelings that you may feel now"/>
+     </div>
+     <span class="wy-form-message"> e.g. I was so overwhelmed to see you, but I knew the love I have for you was unconditional.</span>
+   </div>
+   <input type="submit" class="btn" />
+ </fieldset>
 </form>
 <% end %>
