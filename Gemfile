@@ -40,12 +40,9 @@ gem 'mandrill-api'
 # HAML
 gem 'haml'
 
-source 'http://rails-assets.org' do
 
 # photo carousel
-gem 'rails-assets-carousel'
-
-end
+gem "jquery-slick-rails"
 
 # AJAX implementation
 gem 'jquery-ui-rails'
