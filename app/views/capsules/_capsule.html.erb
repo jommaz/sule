@@ -1,0 +1,11 @@
+<%= form_for @capsule, method: :post do |f| %>
+	<%= f.text_field :title, placeholder: "Capsule title" %>
+
+	<br>
+
+	<%= f.text_field :release_date, class: "datepicker", placeholder: "When do you want this to be opened?" %>
+	
+	<br>
+
+	<%= f.submit "Create your capsule" %>
+<% end %>
