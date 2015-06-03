@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Sule</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   
   <%= csrf_meta_tags %>
@@ -12,9 +13,90 @@
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.css"/>
 </head>
 <body>
-	
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+    <div class='header'>
+      <h1 style="display: inline-block;">Sulé</h1>
+      <nav>
+        <ul>
+          <% if user_signed_in? %>
+              <li>
+                <%=link_to 'Logout', destroy_user_session_path, method: :delete%>
+              </li>
+              <% else %>
+              <li>
+                <label for="modal-1"><div class="modal-trigger">Login / Signup</div></label>
+              </li>
+
+          <% end%>
+        </ul>
+      </nav>
+    </div>
+    <div class ='view'>
+
+      <div class = 'image'>
+        <!--<img src="http://wallarthd.com/wp-content/uploads/2014/09/Beautiful-Clock-Macro-Wallpaper-For-Android.jpg">-->
+      </div>
+
+      <div class = 'image2'>
+        <!--<img src="http://wallarthd.com/wp-content/uploads/2014/09/Beautiful-Clock-Macro-Wallpaper-For-Android.jpg">-->
+      </div>
+    </div>
+    <!-- modal stuff -->
+    <div class="modal">
+      <input class="modal-state" id="modal-1" type="checkbox" />
+      <div class="modal-fade-screen">
+        <div class="modal-inner">
+          <div class="modal-close" for="modal-1">Close</div>
+          <hr>
+          <div class="modal-content">
+            <h2>Log in</h2>
+
+            <%= form_for @new_user, url: user_session_path do |f| %>
+                <div class="field">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :password %><br />
+                  <%= f.password_field :password, autocomplete: "off" %>
+                </div>
+
+                <div class="actions">
+                  <%= f.submit "Log in" %>
+                </div>
+            <% end %>
+            <hr>
+            <h2>Sign up</h2>
+
+            <%= form_for @new_user, url: user_registration_path do |f| %>
+
+                <div class="field">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :password %>
+                  <% if @minimum_password_length %>
+                      <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+                  <%= f.password_field :password, autocomplete: "off" %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :password_confirmation %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                </div>
+
+                <div class="actions">
+                  <%= f.submit "Sign up" %>
+                </div>
+            <% end %>
+<hr>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <%= yield %>
 

@@ -17,8 +17,174 @@
  */
 
 @import "bourbon";
-@import "base/base";
+@import "base/base"; // BITTERS:: terminal: bitters install
 @import "neat";
+body{
+  margin:0;
+  padding:0;
+
+}
+.header {
+  width: 100%;
+  height: 40px;
+  background-color: darkcyan;
+  h1 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 32px;
+    padding-left: 5%;
+    display: inline;
+  }
+  .modal {
+    padding: 0;
+    margin: 0;
+  }
+
+  nav {
+    float: right;
+    padding-right: 5%;
+  }
+
+  nav a {
+
+    color: white;
+    font-size: 200;
+  }
+  nav ul {
+    padding: 0;
+  }
+
+  nav li {
+    padding-top: 6px;
+    display: inline-block;
+  }
+}
+  .modal {
+    $medium-screen: em(640) !default;
+    $large-screen: em(860) !default;
+    .modal-content {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    h2 {
+      text-align: center;
+    }
+    label {
+      cursor: pointer;
+      font-weight: 200;
+      margin-bottom: 0;
+    }
+
+    .modal-state {
+      display: none;
+    }
+
+    .modal-fade-screen {
+      // overlay
+      @include position(fixed, 0 0 0 0);
+      background-color: rgba(0, 0, 0, 0.85);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      visibility: hidden;
+      z-index: 99999;
+
+      @include media($large-screen) {
+        padding-top: 10em;
+      }
+    }
+
+    .modal-bg {
+      @include position(absolute, 0 0 0 0);
+      cursor: pointer;
+    }
+
+    .modal-close {
+      float: right;
+      padding-right: 5px;
+      cursor: pointer;
+    }
+
+    .modal-inner {
+      background-color: #fff;
+      margin: auto;
+      max-height: 95%;
+      overflow: auto;
+      position: relative;
+      top: 0.5em;
+      transition: opacity 0.25s ease;
+      width: 95%;
+    }
+
+      @include media($medium-screen) {
+        max-height: 70%;
+        width: 80%;
+      }
+
+      @include media($large-screen) {
+        width: 50%;
+      }
+
+
+    .modal-state:checked + .modal-fade-screen {
+      opacity: 1;
+      visibility: visible;
+    }
+
+  .modal-open {
+    overflow: hidden;
+  }
+
+  .modal-closed {
+    overflow: auto;
+  }
+
+  .modal-trigger {
+    font-weight: 200;
+    color: white;
+    &:hover {
+      color: darken($action-color, 15%);
+    }
+    .modal-close {
+      display: inline-block;
+      float: right;
+    }
+  }
+}
+.view{
+  .image{
+   // background-color: red;
+    background-size: cover;
+    background-image: url("http://wallarthd.com/wp-content/uploads/2014/09/Beautiful-Clock-Macro-Wallpaper-For-Android.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  .image2{
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  min-height:100vh;
+}
+@media all and (max-width:700px){
+  //.view{
+  //  .image{
+  //
+  //  }
+  //}
+  .header{
+    height:80px;
+    h1{
+      font-size: 60px;
+    }
+    nav{
+      padding-top: 15px;
+      li{
+        font-size:22px;
+      }
+    }
+  }
+}
+
 
 
 .preview{
@@ -30,3 +196,4 @@
 	width: 200px;
 	height: 200px;
 }
+
