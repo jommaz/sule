@@ -1,12 +1,9 @@
+<p>hello world</p>
 
+<% @capsule.posts.each do |t| %>
+	<p>
+		<%= t.posts %>
+	</p>
+<% end %>
 
-		<% @capsule.posts.each do |t| %>
-			<p>
-				<%= t.posts %>
-			</p>
-		<% end %>
-			
-			<% @capsule.images.each do |t| %>
-			<img src="#{t.images_url.to_s}">
-			<% end %>	
-
+<%= image_tag @capsule.image_url.to_s  %>

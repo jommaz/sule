@@ -13,19 +13,19 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require jquery.slick
 //= require turbolinks
 //= require_tree .
-<<<<<<< HEAD
-//= require carousel
+
+
 $(document).ready(function(){
 	$( ".datepicker" ).datepicker({
-		dateFormat: 'dd-mm-yy'
+		dateFormat: 'mm/dd/yy'
 	});
 	// $( ".datepicker" ).datepicker({
 	// 	defaultDate: +2y
 	// });
 		// minDate: 0
 })
-=======
-//= require jquery.slick
->>>>>>> 0b342649df6b95a38eacfd1398a6cda7c856ab06
+
+
