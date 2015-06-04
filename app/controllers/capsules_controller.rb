@@ -18,7 +18,9 @@ class CapsulesController < ApplicationController
 
 	def show
 		@post = Post.new
+		
 		release = @capsule.release_date.to_datetime
+		# p release.("Printed on %m/%d/%Y")
 		# @time_diff_components = Time.diff(Time.now, , '%y, %M, %d')
 		reday = release.day
 		remonth = release.month
@@ -43,6 +45,7 @@ class CapsulesController < ApplicationController
 	def create
 		@user = current_user
 		@capsule = Capsule.new(params.require(:capsule).permit(:title, :release_date).merge(user: current_user))
+		p @capsule.release_date.strftime("Printed on %m/%d/%Y")
 		if @capsule.save
 			redirect_to @capsule, notice: "New capsule created!"
 		else

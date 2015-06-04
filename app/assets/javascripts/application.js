@@ -46,11 +46,12 @@ $(document).ready(function() {
             $(".dropdown-button").html('<img src="http://i.imgur.com/x9lvYco.gif" />');
         });
     });
-
-    $(".datepicker").datepicker({
-        dateFormat: 'mm/dd/yy'
-    });
-
+ 
+  $("#datepicker").datepicker({
+    dateFormat: "yy-mm-dd",
+    minDate: (0, 0, 0)
+  });
+    
   var vid = document.getElementById("bgvid");
     
   console.log(vid);
