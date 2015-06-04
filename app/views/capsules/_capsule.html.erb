@@ -1,5 +1,7 @@
 <div class='capsuleform'>
   <%= form_for @capsule, :html => {:multipart => true}, method: :post do |f| %>
+  <br>
+    
     <%= f.text_field :title, placeholder: "Capsule title" %>
 
     <br>
