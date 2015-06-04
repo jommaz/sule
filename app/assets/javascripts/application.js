@@ -53,10 +53,26 @@ $(document).ready(function(){
 	$( ".datepicker" ).datepicker({
 		dateFormat: 'mm/dd/yy'
 	});
-	// $( ".datepicker" ).datepicker({
+    var vid = document.getElementById("bgvid");
+    console.log(vid);
+    function vidFade() {
+        vid.classList.add("stopfade");
+    }
+
+    vid.addEventListener('ended', function()
+    {
+// only functional if "loop" is removed
+        vid.pause();
+// to capture IE10
+        vidFade();
+    });
+
+
+//= require jquery.slick
+
+    // $( ".datepicker" ).datepicker({
 	// 	defaultDate: +2y
 	// });
 		// minDate: 0
 })
 
-//= require jquery.slick

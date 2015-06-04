@@ -6,6 +6,7 @@ class CapsulesController < ApplicationController
 	end
 
 	def show
+		@new_user = User.new
 		@capsule = Capsule.find(params[:id])
 		# @image = ImageUploader.new
 		release = @capsule.release_date.to_datetime
