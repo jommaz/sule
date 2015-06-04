@@ -1,8 +1,6 @@
 class CapsulesController < ApplicationController
-	before_action :set_new_user
 	before_action :set_capsule, only:[:show, :edit, :update, :destroy]
 	authenticate_user! except:[:show]
-
 
 	def index
 		@capsules = current_user.capsules
@@ -31,10 +29,12 @@ class CapsulesController < ApplicationController
 		@year_remaining =  reyear - year 
 		@month_remaining = remonth - month 
 		@day_remaining = reday - day
+		@post = Post.new
 	end
 
 	def edit
 		@capsule = Capsule.find(params[:id])
+		@post = Post.new
 		# @image = ImageUploader.new
 	end
 
@@ -72,10 +72,13 @@ class CapsulesController < ApplicationController
 
 	private
 
+<<<<<<< HEAD
+=======
 	def set_capsule
 		@capsule = Capsule.find(params[:id])
 	end
 
+>>>>>>> master
 	def set_new_user
 		@new_user = User.new
 	end

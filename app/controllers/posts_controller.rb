@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	authenticate_user!
+	before_action :set_new_user
 
 	def new
 		@capsule = Capsule.find(params[:capsule_id])
@@ -23,4 +23,8 @@ class PostsController < ApplicationController
   def post_params
     (params.require(:post).permit(:title, :body, :unique).merge(capsule_id: params[:capsule_id]))
   end
+
+  def set_new_user
+		@new_user = User.new
+	end
 end
