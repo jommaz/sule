@@ -1,12 +1,13 @@
 class PostsController < ApplicationController
 
 	def new
+		@capsule = Capsule.find(params[:capsule_id])
 		@post = Post.new
 	end
 
 	def create
 		@capsule = Capsule.find(params[:capsule_id])
-  	@post = Post.new(params.require(:comment).permit(:body, :title, :unique).merge(capsule_id: params[:capsule_id]))
+  	@post = Post.new(params.require(:post).permit(:body, :title, :unique).merge(capsule_id: params[:capsule_id]))
 		if @post.save
 			redirect_to @capsule
 			flash[:notice] = 'Post saved'

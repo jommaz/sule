@@ -10,12 +10,26 @@
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.css"/>
 </head>
 <body>
-	<%= link_to 'capsules', capsules_path %> | <br>
-	<%= link_to 'posts', new_capsule_post_path(@capsule) %> | <br>
-	<%= link_to 'sign-up', new_user_registration_path %> | <br>
-	<%= link_to 'logout', destroy_user_session_path, method: :delete %> | <br>
-	<%= link_to 'login', new_user_session_path %>
-	
+	<header>
+		<nav>
+			<% if user_signed_in?%>
+				<% unless @capsules %>
+					<%= link_to 'capsules', capsules_path, class: :button %> | 
+				<% end %>
+				<% if @capsule %>
+					<%= link_to 'New memories', new_capsule_post_path(@capsule), class: :button %> | 
+				<% end %>
+				<% if @capsules %>
+					<%= link_to 'New capsule', new_capsule_path, class: :button %> |
+				<% end %>
+					<%= link_to 'logout', destroy_user_session_path, class: :button, method: :delete %> | 
+				<% else %>		
+					<%= link_to 'sign-up', new_user_registration_path, class: :button	 %> |
+					<%= link_to 'login', new_user_session_path, class: :button %>
+				<% end %>
+			</nav>
+		</header>
+			
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 

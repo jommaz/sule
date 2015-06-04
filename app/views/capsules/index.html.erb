@@ -1,6 +1,8 @@
+
 <% @capsules.each do |capsule| %>
-	<%= capsule.title %>
+	<%= link_to capsule.title, capsule_path(capsule.id) %>
 	<%= capsule.release_date %>
+	<%= link_to 'Delete capsule', capsule_path(capsule.id), method: :delete %> <br>
 <% end %>
 
-<%= render 'capsule' %>
+
