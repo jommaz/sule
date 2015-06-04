@@ -1,61 +1,10 @@
-<div class = 'capsuleform'>
-  <%= form_for @capsule, :html => {:multipart => true}, method: :post do |f| %>
-  <br>
-    
-    <%= f.text_field :title, placeholder: "Capsule title" %>
+<div class="newCapsule">
+	<div class="capsuleNew">
+		<%= render 'capsule' %>
+	</div>
 
-    <br>
-
-    <%= f.text_field :release_date, class: "datepicker", placeholder: "When do you want this to be opened?" %>
-
-    <br>
-
+	<div class="templates">
+		<%= render 'templates' %>
+	</div>
 </div>
 
-<h1> Choose a template! </h1>
-<div class="cards">
-  <div class="card">
-    <div class="card-image">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
-    </div>
-    <div class="card-header">
-      Child Over Time
-    </div>
-    <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
-      <%= f.radio_button :template, 1 %>
-     </div>
-  </div>
-
-  <div class="card">
-    <div class="card-image">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-4.png" alt="">
-    </div>
-    <div class="card-header">
-      Love Over Time
-    </div>
-    <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
-      <%= f.radio_button :template, 2 %>
-    
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-image">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png" alt="">
-    </div>
-    <div class="card-header">
-      You Over Time
-    </div>
-    <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      <%= f.radio_button :template, 3 %>
-    
-    </div>
-  </div>
-</div>
-    
-      <%= f.submit "Create your capsule" %>
-    
-  <% end %>

@@ -2,23 +2,29 @@
 
 
 <%= form_for [@capsule, @post] do |f| %>
-<% if @post.errors.any? %>
- <% @post.errors.full_messages.each do |msg| %>
-   <p><%= msg %> </p>
-   <% end %>
+  <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |msg| %>
+      <p>
+        <%= msg %>
+      </p>
+    <% end %>
 <% end %>
 
 
 <div id="example3" style="text-align:center">
   <form id ="form3">
     <fieldset class = 'firstquestion'>
-    <div class="wy-control-group">
-    	<%= f.label :body, 'How much did your child weigh at birth?' %>
-      <%= f.text_field :body %>
-      <%= f.hidden_field :unique, value: 1 %>
-      <%= f.submit 'Submit',  :onclick => "ReplaceForm()" %>
+      <div class="wy-control-group">
+      	<%= f.label :body, 'How much did your child weigh at birth?' %>
+        
+        <%= f.text_field :body %>
+        
+        <%= f.hidden_field :unique, value: 1 %>
+        
+        <%= f.submit 'Submit',  :onclick => "ReplaceForm()" %>
+      </div>
     </fieldset>
-  </div>
+  </form>
 </div>
 
 <div id="for_replacement" style="display:none;">

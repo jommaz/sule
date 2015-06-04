@@ -17,8 +17,9 @@ class CapsulesController < ApplicationController
 	end
 
 	def show
-		@new_user = User.new
+		@post = Post.new
 		release = @capsule.release_date.to_datetime
+		# @time_diff_components = Time.diff(Time.now, , '%y, %M, %d')
 		reday = release.day
 		remonth = release.month
 		reyear = release.year
@@ -29,12 +30,10 @@ class CapsulesController < ApplicationController
 		@year_remaining =  reyear - year 
 		@month_remaining = remonth - month 
 		@day_remaining = reday - day
-		@post = Post.new
 	end
 
 	def edit
 		@post = Post.new
-		# @image = ImageUploader.new
 	end
 
 	def delete
