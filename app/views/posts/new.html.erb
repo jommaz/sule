@@ -1,55 +1,62 @@
 <h2>Your Child grows up too quickly. Their personality develops in ways you could not imagine.</h2>
 
 
-<%= form_for @post do |t| %>
+<%= form_for [@capsule, @post], remote: true do |f| %>
 <% if @post.errors.any? %>
  <% @post.errors.full_messages.each do |msg| %>
    <p><%= msg %> </p>
    <% end %>
 <% end %>
 
-<form class="{$modifiers}">
-   <fieldset>
-   <div class="wy-control-group">
-       <%= f.label :body %>
-       <%= f.text_field :body %>
-     <div class="wy-control">
-       <input type="text" placeholder="in Pounds"/>
-     </div>
-     <span class="wy-form-message"> e.g. 6.6 lbs</span>
-   </div>
-   <input type="submit" class="btn" />
-     </div>
-    </fieldset>
-    <fieldset>
-   <div class="wy-control-group">
-     <label> Describe how your child looks</label>
-     <div class="wy-control">
-       <input type="text" placeholder="who does they look like more?"/>
-     </div>
-     <span class="wy-form-message">e.g. He has his mother's smile, his father's eyes. A birthmark on his hand.</span>
-       </div>
-       <input type="submit" class="btn" />
- </fieldset>
-  <fieldset>
+
+<div id="example3" style="text-align:center; border:1px solid black; padding:10px;">
+  <form id ="form3">
+    <fieldset class = 'firstquestion'>
     <div class="wy-control-group">
-     <label> What do you want most for your child?</label>
-     <div class="wy-control">
-       <input type="text" placeholder="your main hopes and dreams for them"/>
-     </div>
-         <span class="wy-form-message"> e.g. to be happy and successful.</span>
-          </div>
-              <input type="submit" class="btn" />
-  </fieldset>
-  <fieldset>
-   <div class="wy-control-group">
-     <label>What is something you'd want to tell your child when they are older?</label>
-     <div class="wy-control">
-       <input type="text" placeholder="the feelings that you may feel now"/>
-     </div>
-     <span class="wy-form-message"> e.g. I was so overwhelmed to see you, but I knew the love I have for you was unconditional.</span>
-   </div>
-   <input type="submit" class="btn" />
- </fieldset>
-</form>
+    	<%= f.label :body, 'How much did your child weigh at birth?' %>
+      <%= f.text_field :body %>
+      <%= f.hidden_field :unique, value: 1 %>
+      <%= f.submit 'Submit',  :onclick => "ReplaceForm()" %>
+    </fieldset>
+  </div>
+</div>
+
+<div id="for_replacement" style="display:none;">
+
+    <fieldset id = 'secondquestion'>
+    <div class="wy-control-group">
+      <%= f.label :body, 'Describe how your child looks' %>
+      <%= f.text_field :body %>
+      <%= f.hidden_field :unique, value: 2 %>
+      <%= f.submit 'Submit' %>
+    </fieldset>
+  </div>
+  </form>
+</div>
+
+  
+  <script type="text/javascript">
+function ReplaceForm()
+{
+// Three places to customize:
+
+// Specify the id of the form.
+var IDofForm = "form3";
+
+// Specify the id of the div containing the form.
+var IDofDivWithForm = "example3";
+
+// Specify the id of the div with the content to replace the form with.
+var IDforReplacement = "for_replacement";
+
+// End of customizations.
+
+// This line submits the form. (If Ajax processed, call Ajax function, instead.)
+document.getElementById(IDofForm).submit();
+
+// This replaces the form with the replacement content.
+document.getElementById(IDofDivWithForm).innerHTML = document.getElementById(IDforReplacement).innerHTML;
+}
+</script>
 <% end %>
+
