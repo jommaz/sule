@@ -58,7 +58,7 @@ var IDforReplacement = "for_replacement";
 // End of customizations.
 
 // This line submits the form. (If Ajax processed, call Ajax function, instead.)
-document.getElementById(IDofForm).submit();
+document.getElementById(IDofForm).on('ajax:success');
 
 // This replaces the form with the replacement content.
 document.getElementById(IDofDivWithForm).innerHTML = document.getElementById(IDforReplacement).innerHTML;

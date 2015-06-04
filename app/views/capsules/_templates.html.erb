@@ -1,14 +1,17 @@
+
+<h1> Choose a template! </h1>
 <div class="cards">
   <div class="card">
     <div class="card-image">
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
     </div>
     <div class="card-header">
-      First Card
+      Child Over Time
     </div>
     <div class="card-copy">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
-    </div>
+      <%= f.radio_button :template, 1 %>
+     </div>
   </div>
 
   <div class="card">
@@ -16,10 +19,12 @@
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-4.png" alt="">
     </div>
     <div class="card-header">
-      Another Card
+      Love Over Time
     </div>
     <div class="card-copy">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+      <%= f.radio_button :template, 2 %>
+    
     </div>
   </div>
 
@@ -28,10 +33,16 @@
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png" alt="">
     </div>
     <div class="card-header">
-      The Last Card
+      You Over Time
     </div>
     <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      <%= f.radio_button :template, 3 %>
+    
     </div>
   </div>
 </div>
+    
+      <%= f.submit "Create your capsule" %>
+    
+  <% end %>

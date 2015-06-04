@@ -18,7 +18,6 @@
 		<% end %>
 
 		<h1> Add a written memory to the time capsule </h1>
-
 		<%= form_for [@capsule, @post] do |f| %>
 			<% if @post.errors.any? %>
 				<% @post.errors.full_messages.each do |msg| %>
