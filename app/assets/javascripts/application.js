@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require_tree .
 
+
 $(function() {
     $("#modal-1").on("change", function() {
         if ($(this).is(":checked")) {
@@ -36,6 +37,19 @@ $(function() {
 });
 
 $(document).ready(function(){
+    $(".dropdown-button").click(function() {
+        $(".dropdown-menu").toggleClass("show-menu");
+        $(".dropdown-menu > li").click(function(){
+            $(".dropdown-menu").removeClass("show-menu");
+        });
+        $(".dropdown-menu.dropdown-select > li").click(function() {
+            $(".dropdown-button").html($(this).html());
+        });
+    });
+});
+//= require carousel
+
+$(document).ready(function(){
 	$( ".datepicker" ).datepicker({
 		dateFormat: 'mm/dd/yy'
 	});
@@ -44,3 +58,5 @@ $(document).ready(function(){
 	// });
 		// minDate: 0
 })
+
+//= require jquery.slick

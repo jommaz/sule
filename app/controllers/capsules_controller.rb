@@ -1,5 +1,6 @@
 class CapsulesController < ApplicationController
 	def index
+		@new_user = User.new
 		@capsules = current_user.capsules
 		@capsule = Capsule.new
 	end
