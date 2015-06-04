@@ -8,11 +8,12 @@
   <%= csrf_meta_tags %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="text/javascript"></script>
   
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application'  %>
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick-theme.css"/>
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.css"/>
 </head>
 <body>
+
     <div class='header'>
       <h1 style="display: inline-block;">Sulé</h1>
       <nav>
@@ -24,7 +25,7 @@
                   <p class="dropdown-button"><%= image_tag('Black_wrench_24.png')%></p>
                   <ul class="dropdown-menu dropdown-select">
                     <li><%=link_to 'Logout', destroy_user_session_path, method: :delete%></li>
-                    <li><%=link_to 'New CapSulé', new_capsule_path%></li>
+                    <li><%=link_to 'New CapSulé', new_capsule_path %></li>
                     <li><%=link_to 'Capsules', capsules_path%></li>
                   </ul>
                 </div>
@@ -48,7 +49,6 @@
           <hr>
           <div class="modal-content">
             <h2>Log in</h2>
-
             <%= form_for @new_user, url: user_session_path do |f| %>
                 <div class="field">
                   <%= f.email_field :email, autofocus: true, placeholder: 'email' %>
@@ -86,7 +86,7 @@
                   <%= f.submit "Sign up" %>
                 </div>
             <% end %>
-<hr>
+            <hr>
           </div>
         </div>
       </div>

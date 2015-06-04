@@ -1,6 +1,5 @@
 <div class = 'capsuleform'>
-    <%= form_for @capsule, :html => {:multipart => true}, method: :post do |f| %>
-    <%= form_for @capsule, method: :post do |f| %>
+  <%= form_for @capsule, :html => {:multipart => true}, method: :post do |f| %>
         <%= f.text_field :title, placeholder: "Capsule title" %>
 
         <br>
@@ -9,7 +8,9 @@
 
         <br>
 
-        <%= f.submit "Create your capsule" %>
-    <% end %>
-      <% end %>
+
+            <%= f.submit "Create your capsule" %>
+        <% end %>
+  <% end %>
+
 </div>

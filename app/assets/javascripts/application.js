@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require main
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
@@ -76,3 +77,4 @@ $(document).ready(function(){
 		// minDate: 0
 })
 
+//= require_tree .
