@@ -1,4 +1,5 @@
 class CapsulesController < ApplicationController
+	before_action :set_new_user
 
 	def index
 		@new_user = User.new
@@ -24,10 +25,12 @@ class CapsulesController < ApplicationController
 		@year_remaining =  reyear - year 
 		@month_remaining = remonth - month 
 		@day_remaining = reday - day
+		@post = Post.new
 	end
 
 	def edit
 		@capsule = Capsule.find(params[:id])
+		@post = Post.new
 		# @image = ImageUploader.new
 	end
 
@@ -61,5 +64,11 @@ class CapsulesController < ApplicationController
 		else
 			redirect_to capsules_remove_path, notice: "There was a problem deleting this capsule"
 		end
+	end
+
+	private
+
+	def set_new_user
+		@new_user = User.new
 	end
 end

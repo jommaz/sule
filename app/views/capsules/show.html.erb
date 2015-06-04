@@ -5,13 +5,58 @@
 		<%= @month_remaining %> months and
 		<%= @day_remaining %> days
 	</h1>
+<%= form_for @capsule, :html => {:multipart => true} do |f| %>
+	<p>
+		<%= f.file_field :image %>
+	</p>
+
+
+	<%= f.submit 'Submit' %>	
+<% end %>
+
+<h1> Add a written memory to the time capsule </h1>
+
+<%= form_for [@capsule, @post] do |f| %>
+<% if @post.errors.any? %>
+ <% @post.errors.full_messages.each do |msg| %>
+   <p><%= msg %> </p>
+   	<% end %>
+   <% end %>
+
+<div id="memory" style="text-align:center">
+  <form>
+    <fieldset class = 'firstquestion'>
+    <div class="wy-control-group">
+    	<%= f.label :body, 'Submit a memory' %>
+      <%= f.text_area :body, placeholder: 'Write about something that happened today, add a photo or even a video' %>
+      <%= f.hidden_field :unique, value: 1 %>
+      <%= f.submit 'Submit',  :onclick => "ReplaceForm()" %>
+    </fieldset>
+  </div>
+</div>
+
+<% end %>
 <% else %>
+<div class="grid-items">
 	<% @capsule.posts.each do |t| %>
+	<a href="javascript:void(0)" class="grid-item">
+		<h1>
+			<%= t.title %>
+		</h1>
 		<p>
-			<%= t.posts %>
+			<%= t.body %>
 		</p>
+		<p>
+			<%= t.created_at %>
+	</a>
 	<% end %>
 	<% if @capsule.image? %>
+	<a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image">
 		<%= image_tag @capsule.image_url.to_s %>
+	<% end %>
+	<% if @capsule.video? %>
+	<a href="javascript:void(0)" class="grid-item grid-item-big">
+		<%= video_tag @capsule.video_url.to_s %>
+	</a>
 	<% end %>
 <% end %>
