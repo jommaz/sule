@@ -18,7 +18,9 @@ class CapsulesController < ApplicationController
 
 	def show
 		@post = Post.new
+		
 		release = @capsule.release_date.to_datetime
+		# p release.("Printed on %m/%d/%Y")
 		# @time_diff_components = Time.diff(Time.now, , '%y, %M, %d')
 		reday = release.day
 		remonth = release.month
