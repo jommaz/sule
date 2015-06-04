@@ -17,7 +17,6 @@ class CapsulesController < ApplicationController
 
 	def show
 		@new_user = User.new
-		@capsule = Capsule.find(params[:id])
 		release = @capsule.release_date.to_datetime
 		reday = release.day
 		remonth = release.month
@@ -33,7 +32,6 @@ class CapsulesController < ApplicationController
 	end
 
 	def edit
-		@capsule = Capsule.find(params[:id])
 		@post = Post.new
 		# @image = ImageUploader.new
 	end
@@ -53,7 +51,6 @@ class CapsulesController < ApplicationController
 	end
 
 	def update
-		@capsule = Capsule.find(params[:id])
 		if @capsule.update(params.require(:capsule).permit(:post, :video, :image))
 			redirect_to capsules_path, notice: "Your capsule has been updated"
 		else
@@ -62,7 +59,6 @@ class CapsulesController < ApplicationController
 	end
 
 	def destroy
-		@capsule = Capsule.find(params[:id])
 		if @capsule.destroy
 			redirect_to current_user.capsules
 		else
@@ -72,13 +68,10 @@ class CapsulesController < ApplicationController
 
 	private
 
-<<<<<<< HEAD
-=======
 	def set_capsule
 		@capsule = Capsule.find(params[:id])
 	end
 
->>>>>>> master
 	def set_new_user
 		@new_user = User.new
 	end
