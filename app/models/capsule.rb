@@ -6,5 +6,4 @@ class Capsule < ActiveRecord::Base
   has_many :videos, dependent: :destroy
   mount_uploader :image, ImageUploader
   mount_uploader :video, VideoUploader
-
 end

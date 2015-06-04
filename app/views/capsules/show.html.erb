@@ -50,9 +50,12 @@
 			<%= t.created_at %>
 	</a>
 	<% end %>
+
 	<% if @capsule.image? %>
+
 	<a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image">
 		<%= image_tag @capsule.image_url.to_s %>
+
 	<% end %>
 	<% if @capsule.video? %>
 	<a href="javascript:void(0)" class="grid-item grid-item-big">

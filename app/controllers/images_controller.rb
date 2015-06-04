@@ -1,11 +1,11 @@
 class ImagesController < ApplicationController
-  authenticate_user!
+  before_action :authenticate_user!
 
   def new
   end
 
   def create
-  	uploader = ImagesUploader.new
+  	uploader = ImageUploader.new
   	if uploader.store!
   		redirect_to @capsule
   	else
