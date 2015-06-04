@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150603192957) do
+ActiveRecord::Schema.define(version: 20150604192109) do
 
   create_table "capsules", force: :cascade do |t|
     t.datetime "release_date"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150603192957) do
     t.datetime "updated_at",   null: false
     t.string   "image"
     t.string   "video"
+    t.integer  "template"
   end
 
   add_index "capsules", ["user_id"], name: "index_capsules_on_user_id"

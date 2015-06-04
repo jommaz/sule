@@ -43,9 +43,9 @@ class CapsulesController < ApplicationController
 
 	def create
 		@user = current_user
-		@capsule = Capsule.new(params.require(:capsule).permit(:title, :release_date).merge(user: current_user))
+		@capsule = Capsule.new(params.require(:capsule).permit(:title, :release_date, :template).merge(user: current_user))
 		if @capsule.save
-			redirect_to @capsule, notice: "New capsule created!"
+			redirect_to @capsule, notice: 'You have created a new capsule'
 		else
 			render :index
 		end
