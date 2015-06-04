@@ -15,7 +15,6 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require jquery.slick
-//= require turbolinks
 //= require_tree .
 
 
@@ -47,10 +46,7 @@ $(document).ready(function(){
             $(".dropdown-button").html($(this).html());
         });
     });
-});
-//= require carousel
-
-$(document).ready(function(){
+    
 	$( ".datepicker" ).datepicker({
 		dateFormat: 'mm/dd/yy'
 	});
@@ -69,12 +65,4 @@ $(document).ready(function(){
     });
 
 
-//= require jquery.slick
 
-    // $( ".datepicker" ).datepicker({
-	// 	defaultDate: +2y
-	// });
-		// minDate: 0
-})
-
-//= require_tree .

@@ -1,4 +1,4 @@
-<% if @capsule.release_date > Time.now %>
+<% if @capsule.release_date < Time.now %>
 	<h1>
 		This capsule will open in
 		<%= @year_remaining %> years
