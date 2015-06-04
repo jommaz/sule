@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-	authenticate_user!
-
+	before_action :authenticate_user!
+	
 	def new
 		@capsule = Capsule.find(params[:capsule_id])
 		@post = Post.new

@@ -1,7 +1,7 @@
 class CapsulesController < ApplicationController
 	before_action :set_new_user
 	before_action :set_capsule, only:[:show, :edit, :update, :destroy]
-	authenticate_user! except:[:show]
+	before_action :authenticate_user!, except:[:show]
 
 
 	def index
@@ -19,7 +19,6 @@ class CapsulesController < ApplicationController
 
 	def show
 		@capsule = Capsule.find(params[:id])
-		# @image = ImageUploader.new
 		release = @capsule.release_date.to_datetime
 		reday = release.day
 		remonth = release.month

@@ -11,7 +11,14 @@
 			<%= t.body %>
 		</p>
 	<% end %>
+
 	<% if @capsule.image? %>
-		<%= image_tag @capsule.image_url.to_s %>
+		<%= image_tag(@capsule.image_url.to_s, class: "capImago") %>
+	<% end %>
+
+	<% if @capsule.video? %>
+		<video controls>
+		<%= asset_path(@capsule.video_url.to_s) %>
+		</video>
 	<% end %>
 <% end %>
