@@ -1,4 +1,6 @@
 class ImagesController < ApplicationController
+  authenticate_user!
+
   def new
   end
 

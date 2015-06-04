@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	authenticate_user!
 
 	def new
 		@capsule = Capsule.find(params[:capsule_id])
