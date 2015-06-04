@@ -1,15 +1,16 @@
 <div class = 'capsuleform'>
-    <%= form_for @capsule, :html => {:multipart => true}, method: :post do |f| %>
-    <%= form_for @capsule, method: :post do |f| %>
-        <%= f.text_field :title, placeholder: "Capsule title" %>
+  <%= form_for @capsule, :html => {:multipart => true}, method: :post do |f| %>
+    <%= f.text_field :title, placeholder: "Capsule title" %>
 
-        <br>
+    <br>
 
-        <%= f.text_field :release_date, class: "datepicker", placeholder: "When do you want this to be opened?" %>
+    <%= f.text_field :release_date, class: "datepicker", placeholder: "When do you want this to be opened?" %>
 
-        <br>
+    <br>
+
 
         <%= f.submit "Create your capsule" %>
     <% end %>
     <% end %>
+
 </div>
