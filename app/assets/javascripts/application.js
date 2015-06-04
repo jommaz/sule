@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require main
+// require main
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
@@ -36,33 +36,26 @@ $(function() {
     });
 });
 
-$(document).ready(function(){
-    $(".dropdown-button").click(function() {
+$(document).ready(function() {
+    $(".dropdown-button").click(function () {
         $(".dropdown-menu").toggleClass("show-menu");
-        $(".dropdown-menu > li").click(function(){
+        $(".dropdown-menu > li").click(function () {
             $(".dropdown-menu").removeClass("show-menu");
         });
-        $(".dropdown-menu.dropdown-select > li").click(function() {
-            $(".dropdown-button").html($(this).html());
+        $(".dropdown-menu.dropdown-select > li").click(function () {
+            $(".dropdown-button").html('<img src="http://i.imgur.com/x9lvYco.gif" />');
         });
     });
-    
-	$( ".datepicker" ).datepicker({
-		dateFormat: 'mm/dd/yy'
-	});
+
+    $(".datepicker").datepicker({
+        dateFormat: 'mm/dd/yy'
+    });
     var vid = document.getElementById("bgvid");
     console.log(vid);
     function vidFade() {
         vid.classList.add("stopfade");
     }
 
-    vid.addEventListener('ended', function()
-    {
-// only functional if "loop" is removed
-        vid.pause();
-// to capture IE10
-        vidFade();
-    });
-
+});
 
 
