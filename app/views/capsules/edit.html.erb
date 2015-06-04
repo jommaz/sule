@@ -7,5 +7,29 @@
 		<%= f.file_field :video %>
 	</p>
 
+
 	<%= f.submit 'Submit' %>	
+<% end %>
+
+<h1> Add a written memory to the time capsule </h1>
+
+<%= form_for [@capsule, @post] do |f| %>
+<% if @post.errors.any? %>
+ <% @post.errors.full_messages.each do |msg| %>
+   <p><%= msg %> </p>
+   	<% end %>
+   <% end %>
+
+<div id="memory" style="text-align:center">
+  <form>
+    <fieldset class = 'firstquestion'>
+    <div class="wy-control-group">
+    	<%= f.label :body, 'Submit a memory' %>
+      <%= f.text_area :body, placeholder: 'Write about something that happened today, add a photo or even a video' %>
+      <%= f.hidden_field :unique, value: 1 %>
+      <%= f.submit 'Submit',  :onclick => "ReplaceForm()" %>
+    </fieldset>
+  </div>
+</div>
+
 <% end %>

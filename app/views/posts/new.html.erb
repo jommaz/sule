@@ -1,7 +1,7 @@
 <h2>Your Child grows up too quickly. Their personality develops in ways you could not imagine.</h2>
 
 
-<%= form_for [@capsule, @post], remote: true do |f| %>
+<%= form_for [@capsule, @post] do |f| %>
 <% if @post.errors.any? %>
  <% @post.errors.full_messages.each do |msg| %>
    <p><%= msg %> </p>
@@ -9,7 +9,7 @@
 <% end %>
 
 
-<div id="example3" style="text-align:center; border:1px solid black; padding:10px;">
+<div id="example3" style="text-align:center">
   <form id ="form3">
     <fieldset class = 'firstquestion'>
     <div class="wy-control-group">
