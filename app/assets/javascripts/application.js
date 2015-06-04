@@ -15,8 +15,7 @@
 //= require jquery-ui
 //= require turbolinks
 //= require_tree .
-<<<<<<< HEAD
-//= require carousel
+
 
 $(function() {
     $("#modal-1").on("change", function() {
@@ -35,8 +34,17 @@ $(function() {
         e.stopPropagation();
     });
 });
-=======
-<<<<<<< HEAD
+$(document).ready(function(){
+    $(".dropdown-button").click(function() {
+        $(".dropdown-menu").toggleClass("show-menu");
+        $(".dropdown-menu > li").click(function(){
+            $(".dropdown-menu").removeClass("show-menu");
+        });
+        $(".dropdown-menu.dropdown-select > li").click(function() {
+            $(".dropdown-button").html($(this).html());
+        });
+    });
+});
 //= require carousel
 $(document).ready(function(){
 	$( ".datepicker" ).datepicker({
@@ -47,7 +55,4 @@ $(document).ready(function(){
 	// });
 		// minDate: 0
 })
-=======
 //= require jquery.slick
->>>>>>> 0b342649df6b95a38eacfd1398a6cda7c856ab06
->>>>>>> 5001d40fe7720e2cd5468dfbf10b5b35d065e3c3

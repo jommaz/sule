@@ -16,9 +16,17 @@
       <nav>
         <ul>
           <% if user_signed_in? %>
-              <li>
-                <%=link_to 'Logout', destroy_user_session_path, method: :delete%>
-              </li>
+              <div class="dropdown">
+                <div class="dropdown-container">
+                  <p class="dropdown-description"><i><%=current_user.email%></i></p>
+                  <p class="dropdown-button"><%= image_tag('Black_wrench_24.png')%></p>
+                  <ul class="dropdown-menu dropdown-select">
+                    <li><%=link_to 'Logout', destroy_user_session_path, method: :delete%></li>
+                    <li><%=link_to 'New CapSulé', new_capsule_path%></li>
+                    <li><%=link_to 'Capsules', capsules_path%></li>
+                  </ul>
+                </div>
+              </div>
               <% else %>
               <li>
                 <label for="modal-1"><div class="modal-trigger">Login / Signup</div></label>
@@ -28,16 +36,7 @@
         </ul>
       </nav>
     </div>
-    <div class ='view'>
 
-      <div class = 'image'>
-        <!--<img src="http://wallarthd.com/wp-content/uploads/2014/09/Beautiful-Clock-Macro-Wallpaper-For-Android.jpg">-->
-      </div>
-
-      <div class = 'image2'>
-        <!--<img src="http://wallarthd.com/wp-content/uploads/2014/09/Beautiful-Clock-Macro-Wallpaper-For-Android.jpg">-->
-      </div>
-    </div>
     <!-- modal stuff -->
     <div class="modal">
       <input class="modal-state" id="modal-1" type="checkbox" />
