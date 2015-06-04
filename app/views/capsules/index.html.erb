@@ -1,4 +1,4 @@
-<% @capsules.each do |capsule| %>
+<% current_user.capsules.each do |capsule| %>
 	<p>
 		<%= link_to capsule.title, capsule_path(capsule) %>
 		<%= "#{capsule.release_date.month}/#{capsule.release_date.day}/#{capsule.release_date.year}" %>

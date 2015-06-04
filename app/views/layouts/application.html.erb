@@ -48,7 +48,6 @@
           <hr>
           <div class="modal-content">
             <h2>Log in</h2>
-
             <%= form_for @new_user, url: user_session_path do |f| %>
                 <div class="field">
                   <%= f.email_field :email, autofocus: true, placeholder: 'email' %>
