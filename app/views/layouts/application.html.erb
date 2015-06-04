@@ -14,7 +14,7 @@
 		<nav>
 			<% if user_signed_in?%>
 				<% unless @capsules %>
-					<%= link_to 'capsules', capsules_path, class: :button %> | 
+					<%= link_to 'Capsules', capsules_path, class: :button %> | 
 				<% end %>
 				<% if @capsule %>
 					<%= link_to 'New memories', new_capsule_post_path(@capsule), class: :button %> | 
