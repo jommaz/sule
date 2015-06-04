@@ -172,28 +172,20 @@ body{
     padding-left: 5%;
     display: inline;
   }
-  .modal {
-    padding: 0;
-    margin: 0;
-  }
-
   nav {
     float: right;
     padding-right: 5%;
-  }
-
-  nav a {
-
-    color: white;
-    font-size: 200;
-  }
-  nav ul {
-    padding: 0;
-  }
-
-  nav li {
-    padding-top: 6px;
-    display: inline-block;
+    ul {
+      padding: 0;
+      li {
+        padding-top: 6px;
+        display: inline-block;
+        a {
+          color: white;
+          font-size: 200;
+        }
+      }
+    }
   }
 }
   .modal {
@@ -219,7 +211,7 @@ body{
     .modal-fade-screen {
       // overlay
       @include position(fixed, 0 0 0 0);
-      background-color: rgba(0, 0, 0, 0.85);
+      background-color: rgba(0, 0, 0, 0.65);
       opacity: 0;
       transition: opacity 0.25s ease;
       visibility: hidden;
@@ -249,7 +241,7 @@ body{
       position: relative;
       top: 0.5em;
       transition: opacity 0.25s ease;
-      width: 95%;
+      width: 50%;
     }
 
       @include media($medium-screen) {
@@ -281,6 +273,9 @@ body{
     &:hover {
       color: darken($action-color, 15%);
     }
+    &:visited{
+      color:white;
+    }
     .modal-close {
       display: inline-block;
       float: right;
@@ -311,6 +306,11 @@ body{
       }
     }
   }
+  .modal {
+    .modal-inner {
+      width: 95%;
+    }
+  }
 }
 .capsuleform{
   width:80%;
@@ -327,4 +327,5 @@ body{
 	width: 200px;
 	height: 200px;
 }
+
 
