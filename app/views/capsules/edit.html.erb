@@ -1,0 +1,7 @@
+<%= form_for @capsule, :html => {:multipart => true} do |f| %>
+	<p>
+		<%= f.file_field :image %>
+	</p>
+
+	<%= f.submit 'Submit' %>	
+<% end %>

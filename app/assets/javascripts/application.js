@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require jquery.slick
 //= require turbolinks
 //= require_tree .
 
@@ -34,6 +35,7 @@ $(function() {
         e.stopPropagation();
     });
 });
+
 $(document).ready(function(){
     $(".dropdown-button").click(function() {
         $(".dropdown-menu").toggleClass("show-menu");
@@ -46,13 +48,15 @@ $(document).ready(function(){
     });
 });
 //= require carousel
+
 $(document).ready(function(){
 	$( ".datepicker" ).datepicker({
-		dateFormat: 'dd-mm-yy'
+		dateFormat: 'mm/dd/yy'
 	});
 	// $( ".datepicker" ).datepicker({
 	// 	defaultDate: +2y
 	// });
 		// minDate: 0
 })
+
 //= require jquery.slick
