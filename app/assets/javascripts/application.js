@@ -19,21 +19,21 @@
 
 
 $(function() {
-    $("#modal-1").on("change", function() {
-        if ($(this).is(":checked")) {
-            $("body").addClass("modal-open");
-        } else {
-            $("body").removeClass("modal-open");
-        }
-    });
+  $("#modal-1").on("change", function() {
+    if ($(this).is(":checked")) {
+      $("body").addClass("modal-open");
+    } else {
+      $("body").removeClass("modal-open");
+    }
+  });
 
-    $(".modal-fade-screen, .modal-close").on("click", function() {
-        $(".modal-state:checked").prop("checked", false).change();
-    });
+  $(".modal-fade-screen, .modal-close").on("click", function() {
+    $(".modal-state:checked").prop("checked", false).change();
+  });
 
-    $(".modal-inner").on("click", function(e) {
-        e.stopPropagation();
-    });
+  $(".modal-inner").on("click", function(e) {
+    e.stopPropagation();
+  });
 });
 
 $(document).ready(function() {
@@ -46,16 +46,18 @@ $(document).ready(function() {
             $(".dropdown-button").html('<img src="http://i.imgur.com/x9lvYco.gif" />');
         });
     });
-
-    $(".datepicker").datepicker({
-        dateFormat: 'mm/dd/yy'
-    });
-    var vid = document.getElementById("bgvid");
-    console.log(vid);
-    function vidFade() {
-        vid.classList.add("stopfade");
-    }
-
-});
-
+ 
+  $("#datepicker").datepicker({
+    dateFormat: "yy-mm-dd",
+    minDate: (0, 0, 0)
+  });
+    
+  var vid = document.getElementById("bgvid");
+    
+  console.log(vid);
+    
+  function vidFade() {
+    vid.classList.add("stopfade");
+  }
+})
 

@@ -42,15 +42,17 @@ gem 'mandrill-api'
 # HAML
 gem 'haml'
 
-
 # photo carousel
 gem "jquery-slick-rails"
 
 # AJAX implementation
 gem 'jquery-ui-rails'
 
+# jQuery File Upload
+gem 'jquery-fileupload-rails'
 
-
+# Time subtraction difference gem
+gem 'time_diff', '~> 0.3.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
