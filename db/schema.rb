@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150603192957) do
 
+
   create_table "capsules", force: :cascade do |t|
     t.datetime "release_date"
     t.string   "title"

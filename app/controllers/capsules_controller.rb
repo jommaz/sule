@@ -3,8 +3,13 @@ class CapsulesController < ApplicationController
 	before_action :set_capsule, only:[:show, :edit, :update, :destroy]
 	authenticate_user! except:[:show]
 
+
 	def index
 		@capsules = current_user.capsules
+	end
+
+	def new
+		@user = current_user
 		@capsule = Capsule.new
 	end
 

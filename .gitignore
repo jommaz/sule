@@ -17,7 +17,7 @@
 /tmp
 
 
-* Ignore bundled gemfile
+# Ignore bundled gemfile
 /Gemfile.lock
 /Gemfile
 
