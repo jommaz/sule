@@ -12,13 +12,8 @@ class CapsulesController < ApplicationController
 		@capsule = Capsule.new
 	end
 
-	def new
-		@capsule = Capsule.new
-	end
-
 	def show
 		@post = Post.new
-		
 		release = @capsule.release_date.to_datetime
 		# p release.("Printed on %m/%d/%Y")
 		# @time_diff_components = Time.diff(Time.now, , '%y, %M, %d')

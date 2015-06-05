@@ -1,7 +1,5 @@
 <div class='capsuleform'>
-  <%= form_for @capsule, :html => {:multipart => true}, method: :post do |f| %>
-  <br>
-    
+  <%= form_for @capsule, :html => {:multipart => true}, method: :post do |f| %>    
     <%= f.text_field :title, placeholder: "Capsule title" %>
 
     <br>
@@ -9,7 +7,69 @@
     <%= f.text_field :release_date, id: "datepicker", placeholder: "When do you want this to be opened?" %>
 
     <br>
-    
+
+    <div class="templateChoice">
+	    <h1>
+			  Choose a template!
+			</h1>
+
+			<div class="cards">
+			  <div class="card">
+			    <div class="card-image">
+			      <%= image_tag 'template_1.png' %>
+			    </div>
+			    
+			    <div class="card-header">
+			      Child Over Time
+			    </div>
+			    
+			    <div class="card-copy">
+			      <p>
+			        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.
+			      </p>
+
+			      <%= f.radio_button :template, 1 %>
+			     </div>
+			  </div>
+
+			  <div class="card">
+			    <div class="card-image">
+			      <%= image_tag 'template_2.png' %>
+			    </div>
+			    
+			    <div class="card-header">
+			      Love Over Time
+			    </div>
+			    
+			    <div class="card-copy">
+			      <p>
+			        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.
+			      </p>
+
+			      <%= f.radio_button :template, 2 %>
+			    </div>
+			  </div>
+
+			  <div class="card">
+			    <div class="card-image">
+			      <%= image_tag 'template_3.png' %>
+			    </div>
+			    
+			    <div class="card-header">
+			      You Over Time
+			    </div>
+			    
+			    <div class="card-copy">
+			      <p>
+			        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+			      </p>
+
+			      <%= f.radio_button :template, 3 %>
+			    </div>
+			  </div>
+			</div>
+		</div> 
+
     <%= f.submit "Create your capsule" %>
   <% end %>
 </div>

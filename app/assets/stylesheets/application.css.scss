@@ -28,7 +28,7 @@ body{
     padding-top: 50px;
     
     .newCapsule {
-      width: 860px;
+      width: 1040px;
       margin: 0 auto;
 
       .capsuleNew {
@@ -670,7 +670,7 @@ body{
 
   .card-image {
     overflow: hidden;
-    max-height: 150px;
+    height: 270px;
 
     img {
       @include transition (all 0.2s ease-in-out);
@@ -707,6 +707,7 @@ body{
     
     .card-image img {
       background: $card-image-hover-background;
+      width: 240px;
     }
   
     .card-header {

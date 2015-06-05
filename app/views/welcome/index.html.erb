@@ -19,3 +19,9 @@
   </div>
 </div>
 </video>
+
+<% if user_signed_in? %>
+  <div class="welcomeLink">
+    <%= link_to "Your Capsules", capsules_path %>
+  </div>
+<% end %>
