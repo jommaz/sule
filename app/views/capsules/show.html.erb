@@ -1,5 +1,5 @@
 <div class="show">
-	<% #if @capsule.release_date > Time.now %>
+	<% if @capsule.release_date > Time.now %>
 		<div class="dateTime">
 			<% if @capsule.release_date.day > 01 %>
 				<h1>
@@ -64,7 +64,7 @@
 				<% end %>
 			</div>
 		</div>
-	<% #else %>
+	<% else %>
 		<div class="grid-items">
 			<% @capsule.posts.each do |t| %>
 				<a href="javascript:void(0)" class="grid-item">
@@ -99,5 +99,5 @@
 				</a>
 			<% end %>
 		</div>
-	<% #end %>
+	<% end %>
 </div>
