@@ -10,17 +10,17 @@
 		
 		<div class="mediaSubmit">
 			<%= form_for @capsule, :html => {:multipart => true}, class: 'newMedia' do |f| %>
-				<h2>
+				<h1>
 					<%= f.label :image %>
-				</h2>
+				</h1>
 				
 				<p class="image field">
 					<%= f.file_field :image, multiple: true, name: "image[image]" %>
 				</p>
 
-				<h2>
+				<h1>
 					<%= f.label :video %>
-				</h2>
+				</h1>
 				<p>
 					<%= f.file_field :video %>
 				</p>
