@@ -49,7 +49,7 @@ $(document).ready(function() {
  
   $("#datepicker").datepicker({
     dateFormat: "yy-mm-dd",
-    minDate: (0, 0, 0)
+    minDate: (0, 0, 30)
   });
     
   var vid = document.getElementById("bgvid");
