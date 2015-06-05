@@ -2,6 +2,7 @@ class ImagesController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    @image = ImageUploader.new
   end
 
   def create

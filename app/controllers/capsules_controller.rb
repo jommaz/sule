@@ -31,6 +31,8 @@ class CapsulesController < ApplicationController
 
 	def edit
 		@post = Post.new
+		@image = ImageUploader.new
+		@video = VideoUploader.new
 	end
 
 	def delete
@@ -48,6 +50,8 @@ class CapsulesController < ApplicationController
 	end
 
 	def update
+		@image = ImageUploader.new
+		@video = VideoUploader.new
 		if @capsule.update(params.require(:capsule).permit(:post, :video, :image))
 			redirect_to capsules_path, notice: "Your capsule has been updated"
 		else

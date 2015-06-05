@@ -1,5 +1,5 @@
 <div class="flex-boxes">
-	<% current_user.capsules.each do |capsule| %>
+	<% @capsules.each do |capsule| %>
 		<div class = "flex-box flex-box-med">
 		  <%= link_to capsule.title, capsule_path(capsule) %>
 		  

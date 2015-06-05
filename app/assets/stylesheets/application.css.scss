@@ -43,6 +43,23 @@ body{
     .show {
       width: 860px;
       margin: 0 auto;
+
+      .dateTime {
+        font-size: 3em;
+      }
+
+      .submits {
+        width: 860px;
+        margin: 0 auto;
+
+        .mediaSubmit {
+          display: inline-block;
+        }
+
+        .postSubmit {
+          display: inline-block;
+        }
+      }
     }
 
     .emb {
