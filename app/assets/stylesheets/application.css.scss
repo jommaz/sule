@@ -44,7 +44,8 @@ body{
     }
   }
   .bgimg{
-    background-image:url('https://allthingscountrymusic.files.wordpress.com/2013/11/clock_gears_wallp_long_goodbye_high_resolution_desktop_1600x1290_hd-wallpaper-891659.png');
+    z-index: 9999;
+    //background-image:url('https://allthingscountrymusic.files.wordpress.com/2013/11/clock_gears_wallp_long_goodbye_high_resolution_desktop_1600x1290_hd-wallpaper-891659.png');
   }
   .yield {
     width:800px;
@@ -53,14 +54,24 @@ body{
     min-height:100vh;
     padding-top:50px;
     margin:0 auto;
-
+    h2{
+      color:white;
+      font-size:24px;
+      text-align: center;
+    }
+    h3{
+      padding-top:10px;
+    }
     
     .newCapsule {
-      width: 1040px;
       margin: 0 auto;
 
       .capsuleNew {
         margin: 10px;
+        h1{
+          color:white;
+          text-align:center;
+        }
       }
 
       .templates {
@@ -383,9 +394,8 @@ body{
 }
 
 .capsuleform{
-  width:70%;
-  margin:0;
-  padding-left:70px;
+  width:90%;
+  margin:0 auto;
 }
 
 .preview{
@@ -721,14 +731,14 @@ body{
   $card-border: 1px solid $card-border-color;
   $card-background: lighten($card-border-color, 10%);
   $card-header-background: $card-background;
-  $card-hover-background: lighten($card-background, 5%);
+  //$card-hover-background: lighten($card-background, 5%);
   $card-image-background: #DBD199;
-  $card-image-hover-background: lighten($card-image-background, 5%);
+  //$card-image-hover-background: lighten($card-image-background, 5%);
   $card-margin: 1em;
 
   @include flex-basis(15em);
   @include flex-grow(1);
-  @include transition (all 0.2s ease-in-out);
+  //@include transition (all 0.2s ease-in-out);
   background-color: $card-background;
   border-radius: $base-border-radius;
   border: $card-border;
@@ -741,13 +751,13 @@ body{
     overflow: hidden;
     height: 270px;
 
-    img {
-      @include transition (all 0.2s ease-in-out);
-      background: $card-image-background;
-      border-top-left-radius: $base-border-radius;
-      border-top-right-radius: $base-border-radius;
-      width: 100%;
-    }
+    //img {
+    //  @include transition (all 0.2s ease-in-out);
+    //  background: $card-image-background;
+    //  border-top-left-radius: $base-border-radius;
+    //  border-top-right-radius: $base-border-radius;
+    //  width: 100%;
+    //}
   }
 
   .card-header {
@@ -772,15 +782,15 @@ body{
   
   &:focus,
   &:hover {
-    background-color: $card-hover-background;
+    //background-color: $card-hover-background;
     
     .card-image img {
-      background: $card-image-hover-background;
-      width: 240px;
+      //background: $card-image-hover-background;
+      //width: 240px;
     }
   
     .card-header {
-      background-color: $card-hover-background;
+      //background-color: $card-hover-background;
     }
   }
 
