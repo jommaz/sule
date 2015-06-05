@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-<div class = 'newCapsule'>
-	<div class = 'capsuleNew'
-  <%= form_for @capsule, :html => {:multipart => true}, method: :post do |f| %>
-  <br>
-    
-=======
+<h1>New Capsule</h1>
 <div class='capsuleform'>
   <%= form_for @capsule, :html => {:multipart => true}, method: :post do |f| %>    
->>>>>>> ed0b3e95056086ba76ae8f573f85b763617101e0
     <%= f.text_field :title, placeholder: "Capsule title" %>
 
     <br>
@@ -15,60 +8,6 @@
     <%= f.text_field :release_date, id: "datepicker", placeholder: "When do you want this to be opened?" %>
 
     <br>
-<<<<<<< HEAD
-  </div>
-</div>
-
-<div class= "templates">
-<h1> Choose a template! </h1>
-<div class="cards">
-  <div class="card">
-    <div class="card-image">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
-    </div>
-    <div class="card-header">
-      Child Over Time
-    </div>
-    <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
-      <%= f.radio_button :template, 1 %>
-     </div>
-  </div>
-
-  <div class="card">
-    <div class="card-image">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-4.png" alt="">
-    </div>
-    <div class="card-header">
-      Love Over Time
-    </div>
-    <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
-      <%= f.radio_button :template, 2 %>
-    
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-image">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png" alt="">
-    </div>
-    <div class="card-header">
-      You Over Time
-    </div>
-    <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      <%= f.radio_button :template, 3 %>
-    
-   	 </div>
-  	</div>
-	</div>
-</div>
-    
-      <%= f.submit "Create your capsule" %>
-    
-  <% end %>
-=======
 
     <div class="templateChoice">
 	    <h1>
@@ -135,4 +74,3 @@
     <%= f.submit "Create your capsule" %>
   <% end %>
 </div>
->>>>>>> ed0b3e95056086ba76ae8f573f85b763617101e0
