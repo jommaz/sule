@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :capsules do
      resources :posts, only: [:create]
+     resources :images, only: [:new, :create]
+     resources :videos, only: [:create]
    end
 
   get 'capsules/delete', to: 'capsules#delete', as: 'capsules_remove'
