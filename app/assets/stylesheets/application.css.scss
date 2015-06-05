@@ -19,13 +19,24 @@
 @import "bourbon";
 @import "base/base"; // BITTERS:: terminal: bitters install
 @import "neat";
+#new_capsule{
+  h1{
+    color:white;
 
+  }
+  input[type=submit]{
+    margin-bottom:20px;
+  }
+}
 body{
   margin: 0;
   padding: 0;
   
   .yield {
-    padding-top: 50px;
+    min-height:100vh;
+    padding-top:50px;
+    background-image:url('https://allthingscountrymusic.files.wordpress.com/2013/11/clock_gears_wallp_long_goodbye_high_resolution_desktop_1600x1290_hd-wallpaper-891659.png');
+
     
     .newCapsule {
       width: 1040px;
@@ -395,6 +406,18 @@ body{
       }
     }
   }
+  body{
+    .yield{
+      height:100%;
+      h2{
+        padding-top:10px;
+      }
+      padding:10px;
+      padding-top:40px;
+    }
+  }
+
+
   .modal {
     .modal-inner {
       width: 95%;
