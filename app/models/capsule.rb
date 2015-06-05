@@ -8,4 +8,5 @@ class Capsule < ActiveRecord::Base
   mount_uploader :video, VideoUploader
 
 	accepts_nested_attributes_for :posts, :reject_if => lambda { |b| b[:body].blank? }
+
 end

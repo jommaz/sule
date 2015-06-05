@@ -1,13 +1,21 @@
 <div class="show">
 	<% if @capsule.release_date > Time.now %>
 		<div class="dateTime">
+		<% if @capsule.release_date.day > 01 %>
 			<h1>
 				This capsule will open in
 				<%= @year_remaining %> years, <%= @month_remaining %> months, and <%= @day_remaining %> days
 
 			</h1>
+		<% elsif @capsule.release_date.day == 01 %>
+			<h1>
+				This capsule will open in
+				<%= @year_remaining %> years, <%= @month_remaining %> months, and <%= @day_remaining %> day
+
+			</h1>
+		<% end %>
 		</div>
-		
+
 		<div class="mediaSubmit">
 			<%= form_for @capsule, :html => {:multipart => true}, class: 'newMedia' do |f| %>
 				<h1>
@@ -18,47 +26,54 @@
 					<%= f.file_field :image, multiple: true, name: "image[image]" %>
 				</p>
 
-				<h1>
-					<%= f.label :video %>
-				</h1>
-				<p>
-					<%= f.file_field :video %>
-				</p>
-
-				<%= f.submit 'Submit' %>	
-			<% end %>
-		</div>
 		
-		<div class="postSubmit">
-			<h1>
-				Add a written memory to the time capsule
-			</h1>
+		<div class="submits">
+	
+			
+			<div class="postSubmit">
+				<h1>
+					Add a written memory to the time capsule
+				</h1>
+				<div class="mediaSubmit">
+				<%= form_for [@capsule, @image], :html => {:multipart => true}, class: 'newMedia' do |f| %>
+					<h2>
+						<%= f.label :name %>
+					</h2>
+					
+					<p class="image field">
+						<%= f.file_field :image %>
+					</p>
 
-			<%= form_for [@capsule, @post] do |f| %>
-				<% if @post.errors.any? %>
-					<% @post.errors.full_messages.each do |msg| %>
-				   <p>
-					   <%= msg %>
-				   </p>
-					<% end %>
+					<%= f.submit %>	
 				<% end %>
+			</div>
+			
+				<%= form_for [@capsule, @post] do |f| %>
+					<% if @post.errors.any? %>
+						<% @post.errors.full_messages.each do |msg| %>
+					   <p>
+						   <%= msg %>
+					   </p>
+						<% end %>
+					<% end %>
 
-				<div id="memory" style="text-align:center">
-			    <fieldset class = 'firstquestion'>
-				    <div class="wy-control-group">
-				    	<%= f.label :body, 'Submit a memory' %>
-				      
-				      <%= f.text_area :body, placeholder: 'Write about something that happened today, add a photo or even a video' %>
-				      
-				      <%= f.hidden_field :unique, value: 1 %>
-				      
-				      <%= f.submit 'Submit',  :onclick => "ReplaceForm()" %>
-				    </div>
-			    </fieldset>
-				</div>
-			<% end %>
+					<div id="memory" style="text-align:center">
+				    <fieldset class = 'firstquestion'>
+					    <div class="wy-control-group">
+					    	<%= f.label :body, 'Submit a memory' %>
+					      
+					      <%= f.text_area :body, placeholder: 'Write about something that happened today, add a photo or even a video' %>
+					      
+					      <%= f.hidden_field :unique, value: 1 %>
+					      
+					      <%= f.submit 'Submit',  :onclick => "ReplaceForm()" %>
+					    </div>
+				    </fieldset>
+					</div>
+				<% end %>
+			</div>
 		</div>
-	<% else %>
+
 		<div class="grid-items">
 			<% @capsule.posts.each do |t| %>
 				<a href="javascript:void(0)" class="grid-item">
@@ -76,11 +91,13 @@
 				</a>
 			<% end %>
 
-			<% if @capsule.image? %>
-				<a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image">
-					<%= image_tag @capsule.image_url.to_s %>
+			<% @capsule.images.each do |t| %>
+				<a href="javascript:void(0)" class="grid-item">
+					<%= image_tag t.image_url.to_s %>
 				</a>
 			<% end %>
+
+
 			
 			<% if @capsule.video? %>
 				<a href="javascript:void(0)" class="grid-item grid-item-big">
@@ -88,5 +105,5 @@
 				</a>
 			<% end %>
 		</div>
-	<% end %>
+
 </div>
