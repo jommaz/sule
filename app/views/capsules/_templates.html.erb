@@ -1,31 +1,42 @@
-<%= form_for @capsule, :html => {:multipart => true}, method: :post do |f| %>
+<% f =  if local_assigns[:f].nil? %>
+<h1>
+  Choose a template!
+</h1>
 
-<h1> Choose a template! </h1>
 <div class="cards">
   <div class="card">
     <div class="card-image">
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
     </div>
+    
     <div class="card-header">
       Child Over Time
     </div>
+    
     <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.
+      </p>
+
       <%= f.radio_button :template, 1 %>
      </div>
   </div>
 
   <div class="card">
     <div class="card-image">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-4.png" alt="">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png" alt="">
     </div>
+    
     <div class="card-header">
       Love Over Time
     </div>
-    <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
-      <%= f.radio_button :template, 2 %>
     
+    <div class="card-copy">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.
+      </p>
+
+      <%= f.radio_button :template, 2 %>
     </div>
   </div>
 
@@ -33,17 +44,20 @@
     <div class="card-image">
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png" alt="">
     </div>
+    
     <div class="card-header">
       You Over Time
     </div>
-    <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      <%= f.radio_button :template, 3 %>
     
+    <div class="card-copy">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </p>
+
+      <%= f.radio_button :template, 3 %>
     </div>
   </div>
 </div>
     
-      <%= f.submit "Create your capsule" %>
-    
-  <% end %>
+<%= f.submit "Create your capsule" %>
+
