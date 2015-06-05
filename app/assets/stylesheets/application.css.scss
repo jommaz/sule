@@ -32,11 +32,18 @@ body{
   margin: 0;
   padding: 0;
   .mainWords{
-    width:90%;
+    width:20%;
     margin:0 auto;
+    padding-top:30%;
     h1{
-      color: white;
+      text-align: center;
+      margin:auto 0;
+      color: black;
+      font-weight: 200;
       font-size: 36px;
+    }
+    hr{
+      border-top: 2px solid black;
     }
     p{
       color:white;
@@ -339,6 +346,7 @@ body{
     top: 0.5em;
     transition: opacity 0.25s ease;
     width: 50%;
+    margin-top:50px;
   }
 
   @include media($medium-screen) {

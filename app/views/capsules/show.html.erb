@@ -7,7 +7,13 @@
 
 			</h1>
 		</div>
-		
+      <% if @capsule.template = 1 %>
+          <% render partial: "child" %>
+          <% elsif @capsule.template = 2 %>
+              <% render partial: "love" %>
+              <% else%>
+                  <% render partial: "you" %>
+      <% end %>
 		<div class="mediaSubmit">
 			<%= form_for @capsule, :html => {:multipart => true}, class: 'newMedia' do |f| %>
 				<h1>

@@ -1,8 +1,7 @@
 <h2>Your Child grows up too quickly. Their personality develops in ways you could not imagine.</h2>
 
-
 <div id="example3" style="text-align:center">
-  <form id ="form3">
+  <%= form_for [@capsule, Post.new] do |f|%>
     <fieldset class = 'firstquestion'>
     <div class="wy-control-group">
       <%= f.label :body, 'How much did your child weigh at birth?' %>
@@ -45,3 +44,4 @@
   </div>
 </div>
 
+<%end%>
