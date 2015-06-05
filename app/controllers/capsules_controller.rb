@@ -39,7 +39,7 @@ class CapsulesController < ApplicationController
 		@user = current_user
 		@capsule = Capsule.new(params.require(:capsule).permit(:title, :release_date, :template).merge(user: current_user))
 		if @capsule.save
-			redirect_to @capsule, notice: 'You have created a new capsule'
+			redirect_to edit_capsule_path(@capsule.id), notice: 'You have created a new capsule'
 		else
 			render :index
 		end
@@ -49,7 +49,7 @@ class CapsulesController < ApplicationController
 		if @capsule.update(params.require(:capsule).permit(:post, :video, :image))
 			redirect_to capsules_path, notice: "Your capsule has been updated"
 		else
-			render :edit
+			render :show
 		end
 	end
 
