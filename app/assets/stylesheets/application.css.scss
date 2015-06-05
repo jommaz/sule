@@ -21,7 +21,7 @@
 @import "neat";
 #new_capsule{
   h1{
-    color:white;
+    color:black;
 
   }
   input[type=submit]{
@@ -31,19 +31,48 @@
 body{
   margin: 0;
   padding: 0;
-  
+  .mainWords{
+    width:90%;
+    margin:0 auto;
+    h1{
+      color: white;
+      font-size: 36px;
+    }
+    p{
+      color:white;
+      font-size: 24px;
+    }
+  }
+  .bgimg{
+    z-index: 9999;
+    //background-image:url('https://allthingscountrymusic.files.wordpress.com/2013/11/clock_gears_wallp_long_goodbye_high_resolution_desktop_1600x1290_hd-wallpaper-891659.png');
+  }
   .yield {
+    width:800px;
+    //background-color: rgba(0, 0, 0, 0.5);
+    border-radius:5px;
     min-height:100vh;
     padding-top:50px;
-    background-image:url('https://allthingscountrymusic.files.wordpress.com/2013/11/clock_gears_wallp_long_goodbye_high_resolution_desktop_1600x1290_hd-wallpaper-891659.png');
-
+    margin:0 auto;
+    h2{
+      color:black;
+      font-size:24px;
+      text-align: center;
+    }
+    h3{
+      color:black;
+      padding-top:10px;
+    }
     
     .newCapsule {
-      width: 1040px;
       margin: 0 auto;
 
       .capsuleNew {
         margin: 10px;
+        h1{
+          color:black;
+          text-align:center;
+        }
       }
 
       .templates {
@@ -52,23 +81,20 @@ body{
     }
     
     .show {
-      width: 860px;
-      margin: 0 auto;
-
-      .dateTime {
-        font-size: 3em;
+      margin:0 auto;
+      margin-bottom:0;
+      width:90%;
+      background-color: #f7f7f7;
+      border-radius:5px;
+      .dateTime{
+        padding:5px;
       }
-
-      .submits {
-        width: 860px;
-        margin: 0 auto;
-
-        .mediaSubmit {
-          display: inline-block;
-        }
-
-        .postSubmit {
-          display: inline-block;
+      .mediaSubmit{
+        padding:10px;
+      }
+      .postSubmit{
+        h1{
+          text-align:center;
         }
       }
     }
@@ -84,6 +110,7 @@ body{
   height: 40px;
   background-color: #FAFAFA;
   position:fixed;
+  z-index:999999;
 
   .dropdown {
     $base-border-color: gainsboro !default;
@@ -368,7 +395,7 @@ body{
 }
 
 .capsuleform{
-  width:80%;
+  width:90%;
   margin:0 auto;
 }
 
@@ -381,8 +408,19 @@ body{
   width: 200px;
   height: 200px;
 }
+.user_edit{
+  margin:0 auto;
+  margin-bottom:0;
+  width:90%;
+  background-color: #f7f7f7;
+  border-radius:5px;
+  padding:10px;
+}
 
 @media all and (max-width:700px){
+  .flex-boxes{
+    min-width:80vw;
+  }
   .header{
     height:50px;
     .dropdown{
@@ -535,7 +573,9 @@ body{
 }
 
 .flex-boxes {
-  width: 860px;
+  a{
+    padding:0 auto;
+  }
   margin: 0 auto;
   $base-border-radius: 3px !default;
   $base-background-color: white !default;
@@ -583,7 +623,7 @@ body{
         
         &:focus,
         &:hover {
-          background-color: transparentize($color-from-list, 0.9);
+          //background-color: transparentize($color-from-list, 0.9);
         }
       }
     }
@@ -692,14 +732,14 @@ body{
   $card-border: 1px solid $card-border-color;
   $card-background: lighten($card-border-color, 10%);
   $card-header-background: $card-background;
-  $card-hover-background: lighten($card-background, 5%);
+  //$card-hover-background: lighten($card-background, 5%);
   $card-image-background: #DBD199;
-  $card-image-hover-background: lighten($card-image-background, 5%);
+  //$card-image-hover-background: lighten($card-image-background, 5%);
   $card-margin: 1em;
 
   @include flex-basis(15em);
   @include flex-grow(1);
-  @include transition (all 0.2s ease-in-out);
+  //@include transition (all 0.2s ease-in-out);
   background-color: $card-background;
   border-radius: $base-border-radius;
   border: $card-border;
@@ -712,13 +752,13 @@ body{
     overflow: hidden;
     height: 270px;
 
-    img {
-      @include transition (all 0.2s ease-in-out);
-      background: $card-image-background;
-      border-top-left-radius: $base-border-radius;
-      border-top-right-radius: $base-border-radius;
-      width: 100%;
-    }
+    //img {
+    //  @include transition (all 0.2s ease-in-out);
+    //  background: $card-image-background;
+    //  border-top-left-radius: $base-border-radius;
+    //  border-top-right-radius: $base-border-radius;
+    //  width: 100%;
+    //}
   }
 
   .card-header {
@@ -743,15 +783,15 @@ body{
   
   &:focus,
   &:hover {
-    background-color: $card-hover-background;
+    //background-color: $card-hover-background;
     
     .card-image img {
-      background: $card-image-hover-background;
-      width: 240px;
+      //background: $card-image-hover-background;
+      //width: 240px;
     }
   
     .card-header {
-      background-color: $card-hover-background;
+      //background-color: $card-hover-background;
     }
   }
 

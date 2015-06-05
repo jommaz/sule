@@ -1,5 +1,21 @@
 <div class="show">
-	
+	<% if @capsule.release_date > Time.now %>
+		<div class="dateTime">
+		<% if @capsule.release_date.day > 01 %>
+			<h1>
+				This capsule will open in
+				<%= @year_remaining %> years, <%= @month_remaining %> months, and <%= @day_remaining %> days
+
+			</h1>
+		<% elsif @capsule.release_date.day == 01 %>
+			<h1>
+				This capsule will open in
+				<%= @year_remaining %> years, <%= @month_remaining %> months, and <%= @day_remaining %> day
+
+			</h1>
+		<% end %>
+		</div>
+		
 		<div class="submits">
 	
 			

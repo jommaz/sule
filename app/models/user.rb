@@ -4,4 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :capsules, dependent: :destroy
+
+  after_create :send_notification
+
+  def send_notification
+  	AdminMailer.new_user(self).deliver
+  end
+  
 end
