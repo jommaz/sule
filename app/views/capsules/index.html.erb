@@ -1,6 +1,6 @@
 <div class="flex-boxes">
-	<% @capsules.each do |capsule| %>
-		<div class = "flex-box flex-box-med">
+	<% current_user.capsules.each do |capsule| %>
+		<div class = "flex-box">
 		  <%= link_to capsule.title, capsule_path(capsule) %>
 		  
 	   <!--  <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2_dark.png" alt=""> -->  	
