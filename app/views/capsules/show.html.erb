@@ -13,6 +13,17 @@
 				</h1>
 			<% end %>
 		</div>
+
+		<div class="mediaSubmit">
+			<%= form_for @capsule, :html => {:multipart => true}, class: 'newMedia' do |f| %>
+				<h1>
+					<%= f.label :image %>
+				</h1>
+				
+				<p class="image field">
+					<%= f.file_field :image, multiple: true, name: "image[image]" %>
+				</p>
+
 		
 		<div class="submits">
 			<h1>

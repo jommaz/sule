@@ -1,46 +1,49 @@
 <h2>Your Love blossoms as time goes on. Capture all the memories that you have.</h2>
+<h3> Show your love for each other in a special way. Start holding those special moments forever </h3>
 
+<%= form_for [@capsule, @post] do |f| %>
+  <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |msg| %>
+      <p>
+        <%= msg %>
+      </p>
+    <% end %>
+  <% end %>
 
-<div id="example3" style="text-align:center">
+  <div id="example3">
   <form id ="form3">
     <fieldset class = 'firstquestion'>
     <div class="wy-control-group">
       <%= f.label :body, 'What did you feel the first time you met your significant other?' %>
       <%= f.text_field :body %>
-      <%= f.submit 'Submit', unique: 5 %>
+    </div>
     </fieldset>
-  </div>
-</div>
 
-<div id="example3" style="text-align:center">
-  <form id ="form3">
     <fieldset class = 'secondquestion'>
     <div class="wy-control-group">
-      <%= f.label :body, 'What is something about your significant other that you admire?' %>
+      <%= f.label :body, 'What is something about your significant other that you admire?'  %>
       <%= f.text_field :body %>
-      <%= f.submit 'Submit', unique: 6 %>
+    </div>
     </fieldset>
-  </div>
-</div>
 
-<div id="example3" style="text-align:center">
-  <form id ="form3">
+
     <fieldset class = 'thirdquestion'>
     <div class="wy-control-group">
-      <%= f.label :body, 'Tell your significant other how much you care about them' %>
+      <%= f.label :body, 'Tell your significant other what attracts you to them' %>
       <%= f.text_field :body %>
-      <%= f.submit 'Submit', unique: 7%>
+    </div>
     </fieldset>
-  </div>
-</div>
 
-<div id="example3" style="text-align:center">
-  <form id ="form3">
+
     <fieldset class = 'fourthquestion'>
     <div class="wy-control-group">
       <%= f.label :body, 'How does your significant other surprise you?' %>
       <%= f.text_field :body %>
-      <%= f.submit 'Submit', unique: 8 %>
+    </div>
     </fieldset>
-  </div>
+  </form>
+
+        <%= f.submit 'Submit' %>
 </div>
+
+<% end %>
