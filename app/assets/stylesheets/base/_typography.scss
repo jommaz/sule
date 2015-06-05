@@ -27,6 +27,7 @@ a {
   color: $action-color;
   text-decoration: none;
   transition: color 0.1s linear;
+  padding:0 auto;
 
   &:active,
   &:focus,
