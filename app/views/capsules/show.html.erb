@@ -1,5 +1,5 @@
 <div class="show">
-	<% #if @capsule.release_date > Time.now %>
+	<% if @capsule.release_date > Time.now %>
 		<div class="dateTime">
 			<% if @capsule.release_date.day > 01 %>
 				<h1>
@@ -13,17 +13,6 @@
 				</h1>
 			<% end %>
 		</div>
-
-		<div class="mediaSubmit">
-			<%= form_for @capsule, :html => {:multipart => true}, class: 'newMedia' do |f| %>
-				<h1>
-					<%= f.label :image %>
-				</h1>
-				
-				<p class="image field">
-					<%= f.file_field :image, multiple: true, name: "image[image]" %>
-				</p>
-
 		
 		<div class="submits">
 			<h1>
@@ -34,10 +23,9 @@
 				<%= form_for [@capsule, @image], :html => {:multipart => true}, class: 'newMedia' do |f| %>
 					<!-- <fieldset> -->
 					<h2>
-						<%= f.label :title %>
+						<%= f.label :name, "Captured memory" %>
 					</h2>
 
-					<%= f.text_field :title %>
 					
 					<p class="image field">
 						<%= f.file_field :image %>
@@ -76,7 +64,7 @@
 				<% end %>
 			</div>
 		</div>
-	<% #else %>
+	<% else %>
 		<div class="grid-items">
 			<% @capsule.posts.each do |t| %>
 				<a href="javascript:void(0)" class="grid-item">
@@ -111,5 +99,5 @@
 				</a>
 			<% end %>
 		</div>
-	<% #end %>
+	<% end %>
 </div>

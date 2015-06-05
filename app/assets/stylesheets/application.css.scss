@@ -59,7 +59,7 @@ body{
     //background-image:url('https://allthingscountrymusic.files.wordpress.com/2013/11/clock_gears_wallp_long_goodbye_high_resolution_desktop_1600x1290_hd-wallpaper-891659.png');
   }
   .yield {
-    width:800px;
+    width:1040px;
     //background-color: rgba(0, 0, 0, 0.5);
     border-radius:5px;
     min-height:100vh;
@@ -116,9 +116,10 @@ body{
 
         .mediaSubmit {
           display: inline-block;
-          padding: 20px 10px;
+          padding: 39px 10px;
           border: 1px solid #A9A9A9;
           margin: 5px;
+          height: 244px;
 
           .photoSubmit {
             width: 140px;
@@ -134,7 +135,7 @@ body{
         .postSubmit {
           display: inline-block;
           border: 1px solid #A9A9A9;
-          padding: 50px 10px;
+          padding: 20px 10px;
           height: 245px;
           margin: 5px;
 
