@@ -1,18 +1,7 @@
-
-<%= form_for [@capsule, @post], remote: true do |f| %>
-	<% if @post.errors.any? %>
- 		<% @post.errors.full_messages.each do |msg| %>
-   		<p>
-   			<%= msg %>
-   		</p>
-   	<% end %>
-	<% end %>
-
 	<% if @capsule.template = 1 %>
-		<%= render partial: 'child', object: @capsule %>
+		<%= render partial: 'child' %>
 	<% elsif @capsule.template = 2 %>
-		<%= render partial: 'love', object:  @capsule %>
+		<%= render partial: 'love' %>
 	<% elsif @capsule.template = 3 %>
-		<%= render partial: 'you', object:  @capsule %>
-	<% end %>
+		<%= render partial: 'you' %>
 <% end %>
