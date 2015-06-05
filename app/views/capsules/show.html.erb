@@ -1,42 +1,45 @@
 <div class="show">
-	<% if @capsule.release_date > Time.now %>
+	<% #if @capsule.release_date > Time.now %>
 		<div class="dateTime">
-		<% if @capsule.release_date.day > 01 %>
-			<h1>
-				This capsule will open in
-				<%= @year_remaining %> years, <%= @month_remaining %> months, and <%= @day_remaining %> days
-
-			</h1>
-		<% elsif @capsule.release_date.day == 01 %>
-			<h1>
-				This capsule will open in
-				<%= @year_remaining %> years, <%= @month_remaining %> months, and <%= @day_remaining %> day
-
-			</h1>
-		<% end %>
+			<% if @capsule.release_date.day > 01 %>
+				<h1>
+					This capsule will open in
+					<%= @year_remaining %> years, <%= @month_remaining %> months, and <%= @day_remaining %> days
+				</h1>
+			<% elsif @capsule.release_date.day == 01 %>
+				<h1>
+					This capsule will open in
+					<%= @year_remaining %> years, <%= @month_remaining %> months, and <%= @day_remaining %> day
+				</h1>
+			<% end %>
 		</div>
 		
 		<div class="submits">
-	
-			
-			<div class="postSubmit">
-				<h1>
-					Add a written memory to the time capsule
-				</h1>
-				<div class="mediaSubmit">
+			<h1>
+				Add a memory to the time capsule
+			</h1>
+				
+			<div class="mediaSubmit">
 				<%= form_for [@capsule, @image], :html => {:multipart => true}, class: 'newMedia' do |f| %>
+					<!-- <fieldset> -->
 					<h2>
-						<%= f.label :name %>
+						<%= f.label :title %>
 					</h2>
+
+					<%= f.text_field :title %>
 					
 					<p class="image field">
 						<%= f.file_field :image %>
 					</p>
 
-					<%= f.submit %>	
+					<div class="photoSubmit">
+						<%= f.submit %>	
+					</div>
+					<!-- </fieldset> -->
 				<% end %>
 			</div>
 			
+			<div class="postSubmit">
 				<%= form_for [@capsule, @post] do |f| %>
 					<% if @post.errors.any? %>
 						<% @post.errors.full_messages.each do |msg| %>
@@ -46,8 +49,8 @@
 						<% end %>
 					<% end %>
 
-					<div id="memory" style="text-align:center">
-				    <fieldset class = 'firstquestion'>
+					<div class="memory">
+				  <!--   <fieldset class = 'firstquestion'> -->
 					    <div class="wy-control-group">
 					    	<%= f.label :body, 'Submit a memory' %>
 					      
@@ -57,12 +60,12 @@
 					      
 					      <%= f.submit 'Submit',  :onclick => "ReplaceForm()" %>
 					    </div>
-				    </fieldset>
+				    <!-- </fieldset> -->
 					</div>
 				<% end %>
 			</div>
 		</div>
-
+	<% #else %>
 		<div class="grid-items">
 			<% @capsule.posts.each do |t| %>
 				<a href="javascript:void(0)" class="grid-item">
@@ -75,18 +78,21 @@
 					</p>
 					
 					<p>
-						<%= t.created_at %>
+						<%= "#{t.created_at.month}/#{t.created_at.day}/#{t.created_at.year}" %>
 					</p>
 				</a>
 			<% end %>
 
 			<% @capsule.images.each do |t| %>
-				<a href="javascript:void(0)" class="grid-item">
-					<%= image_tag t.image_url.to_s %>
+				<a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image">
+					<p>
+						<%= t.title %>
+					</p>
+					<%= image_tag t.image_url.to_s, class: "capsuleImages" %>
+
 				</a>
+
 			<% end %>
-
-
 			
 			<% if @capsule.video? %>
 				<a href="javascript:void(0)" class="grid-item grid-item-big">
@@ -94,5 +100,5 @@
 				</a>
 			<% end %>
 		</div>
-
+	<% #end %>
 </div>
