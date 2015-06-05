@@ -25,7 +25,9 @@ body{
   padding: 0;
   
   .yield {
-    padding-top: 50px;
+    padding: 150px;
+    padding-top:50px;
+
     
     .newCapsule {
       width: 1040px;
@@ -378,6 +380,17 @@ body{
       }
     }
   }
+  body{
+    .yield{
+      h2{
+        padding-top:10px;
+      }
+      padding:10px;
+      padding-top:40px;
+    }
+  }
+
+
   .modal {
     .modal-inner {
       width: 95%;

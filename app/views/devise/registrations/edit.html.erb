@@ -1,5 +1,20 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
+<div class="flex-boxes">
+  <% current_user.capsules.each do |capsule| %>
+      <div class = "flex-box flex-box-med">
+        <%=capsule.title%>
+        <br>
+        <%= link_to 'delete', capsule_path(capsule), method: :delete %>
+
+        <!--  <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2_dark.png" alt=""> -->
+
+        <p>
+          <%= capsule.release_date.month %>/<%= capsule.release_date.day %>/<%= capsule.release_date.year %>
+        </p>
+      </div>
+  <% end %>
+</div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
