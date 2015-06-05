@@ -76,6 +76,7 @@ body{
     }
     
     .newCapsule {
+      width: 1040px;
       margin: 0 auto;
 
       .capsuleNew {
@@ -94,18 +95,65 @@ body{
     .show {
       margin:0 auto;
       margin-bottom:0;
-      width:90%;
+      width:100%;
       background-color: #f7f7f7;
       border-radius:5px;
+      
       .dateTime{
         padding:5px;
+        text-align: center;
+        font-size: 3em;
       }
-      .mediaSubmit{
-        padding:10px;
+      
+      .submits {
+        width: 90%;
+        margin: 0 auto;
+        
+        h1 {
+          font-size: 2em;
+          text-align: center;
+        }
+
+        .mediaSubmit {
+          display: inline-block;
+          padding: 20px 10px;
+          border: 1px solid #A9A9A9;
+          margin: 5px;
+
+          .photoSubmit {
+            width: 140px;
+            margin: 0 auto;
+          }
+
+          label {
+              text-align:center;
+              font-size: 40px;
+            }
+        }
+        
+        .postSubmit {
+          display: inline-block;
+          border: 1px solid #A9A9A9;
+          padding: 50px 10px;
+          height: 245px;
+          margin: 5px;
+
+          .memory {
+            label {
+              text-align:center;
+              font-size: 40px;
+            }
+          }
+        }
       }
-      .postSubmit{
-        h1{
-          text-align:center;
+
+      a.grid-item.grid-item-big.grid-item-image {
+        width: 50%;
+        height: auto;
+
+        img.capsuleImages {
+          width: 100%;
+          height: auto;
         }
       }
     }
@@ -542,7 +590,7 @@ body{
 
   .grid-item img {
       display: block;
-      height: 3em;
+      // height: 3em;
       margin-bottom: 1em;
       margin: auto;
     }

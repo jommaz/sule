@@ -55,7 +55,7 @@ class CapsulesController < ApplicationController
 
 	def destroy
 		if @capsule.destroy
-			redirect_to current_user.capsules
+			redirect_to edit_user_registration_path
 		else
 			redirect_to capsules_remove_path, notice: "There was a problem deleting this capsule"
 		end
