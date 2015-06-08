@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
 	def create
 		@capsule = Capsule.find(params[:capsule_id])
-  	@post = Post.new(params.require(:post).permit(:body, :title, :unique).merge(capsule_id: params[:capsule_id]))
+  	@post = Post.new(params.require(:post).permit(:body, :title ).merge(capsule_id: params[:capsule_id]))
 		if @post.save
 			redirect_to @capsule
 			flash[:notice] = 'Your memory has been stored in this capsule'
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 	private
 
   def post_params
-    (params.require(:post).permit(:title, :body, :unique).merge(capsule_id: params[:capsule_id]))
+    (params.require(:post).permit(:title, :body).merge(capsule_id: params[:capsule_id]))
   end
 
   def set_new_user
