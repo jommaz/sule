@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # user creation, authentication, and sessions gem
 gem 'devise'
 
+gem 'passenger'
+
 # media upload gem
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 # # rmagick for carrierwave
