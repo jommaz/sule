@@ -13,7 +13,44 @@
 				</h1>
 			<% end %>
 		</div>
-		
+	<% else %>
+		<div class="grid-items">
+			<% @capsule.posts.each do |t| %>
+				<a href="javascript:void(0)" class="grid-item">
+					<h1>
+						<%= t.title %>
+					</h1>
+					
+					<p>
+						<%= t.body %>
+					</p>
+					
+					<p>
+						<%= "#{t.created_at.month}/#{t.created_at.day}/#{t.created_at.year}" %>
+					</p>
+				</a>
+			<% end %>
+
+			<% @capsule.images.each do |t| %>
+				<a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image">
+					<p>
+						<%= t.title %>
+					</p>
+					<%= image_tag t.image_url.to_s, class: "capsuleImages" %>
+
+				</a>
+
+			<% end %>
+			
+			<% if @capsule.video? %>
+				<a href="javascript:void(0)" class="grid-item grid-item-big">
+					<%= video_tag @capsule.video_url.to_s %>
+				</a>
+			<% end %>
+		</div>
+	<% end %>
+
+	<% if user_signed_in? %>
 		<div class="submits">
 			<h1>
 				Add a memory to the time capsule
@@ -63,41 +100,6 @@
 					</div>
 				<% end %>
 			</div>
-		</div>
-	<% else %>
-		<div class="grid-items">
-			<% @capsule.posts.each do |t| %>
-				<a href="javascript:void(0)" class="grid-item">
-					<h1>
-						<%= t.title %>
-					</h1>
-					
-					<p>
-						<%= t.body %>
-					</p>
-					
-					<p>
-						<%= "#{t.created_at.month}/#{t.created_at.day}/#{t.created_at.year}" %>
-					</p>
-				</a>
-			<% end %>
-
-			<% @capsule.images.each do |t| %>
-				<a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image">
-					<p>
-						<%= t.title %>
-					</p>
-					<%= image_tag t.image_url.to_s, class: "capsuleImages" %>
-
-				</a>
-
-			<% end %>
-			
-			<% if @capsule.video? %>
-				<a href="javascript:void(0)" class="grid-item grid-item-big">
-					<%= video_tag @capsule.video_url.to_s %>
-				</a>
-			<% end %>
 		</div>
 	<% end %>
 </div>

@@ -24,7 +24,7 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
-  config.action_mailer.default_url_options = { host: "localhost:3000"}
+  config.action_mailer.default_url_options = { host: "http://ec2-52-26-10-131.us-west-2.compute.amazonaws.com"}
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
